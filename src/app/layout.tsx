@@ -3,6 +3,7 @@ import { fontVariables } from "@/lib/fonts";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { StoreProvider } from "@/components/providers/StoreProvider";
 import { MotionProvider } from "@/components/providers/MotionProvider";
+import { PageTransition } from "@/components/motion/PageTransition";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <StoreProvider>
             <Header />
             <main id="main-content" className="flex-1">
-              {children}
+              <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
           </StoreProvider>

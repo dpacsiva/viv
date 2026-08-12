@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -26,9 +27,9 @@ export default function PrivacyPolicyPage() {
         </p>
         <p>
           For any privacy-related questions or requests to remove your data, please reach out through the{" "}
-          <a href="/contact" className="text-bronze hover:underline">
+          <Link href="/contact" className="text-bronze hover:underline">
             Contact
-          </a>{" "}
+          </Link>{" "}
           page.
         </p>
       </div>

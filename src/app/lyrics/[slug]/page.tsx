@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchLyricBySlug, fetchLyricsList } from "@/features/lyrics/lyricsApi";
 import { fetchThemesList } from "@/features/themes/themesApi";
@@ -151,9 +152,9 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
             <ul className="mt-3 flex flex-col gap-3">
               {lyric.importantWords.map((w) => (
                 <li key={w.wordSlug}>
-                  <a href={`/words/${w.wordSlug}`} className="font-serif text-lg text-bronze hover:underline" lang="ta">
+                  <Link href={`/words/${w.wordSlug}`} className="font-serif text-lg text-bronze hover:underline" lang="ta">
                     {w.tamil}
-                  </a>
+                  </Link>
                   <span className="ml-2 font-sans text-sm text-slate">— {w.meaning}</span>
                   {w.reason && <p className="mt-1 font-sans text-sm text-slate">{w.reason}</p>}
                 </li>
