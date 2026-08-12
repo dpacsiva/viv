@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-ivory: #faf8f4;
+  --color-paper: #f3eee5;
+  --color-beige: #e9dfd0;
+  --color-ink: #171717;
+  --color-slate: #68625b;
+  --color-bronze: #9a6838;
+  --color-bronze-dark: #7d5329;
+  --color-border: #ded6ca;
+  --color-white: #ffffff;
+}
+
+@theme inline {
+  --color-ivory: var(--color-ivory);
+  --color-paper: var(--color-paper);
+  --color-beige: var(--color-beige);
+  --color-ink: var(--color-ink);
+  --color-slate: var(--color-slate);
+  --color-bronze: var(--color-bronze);
+  --color-bronze-dark: var(--color-bronze-dark);
+  --color-border: var(--color-border);
+
+  --font-serif: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-tamil-serif: var(--font-google-sans), "Google Sans", sans-serif;
+  --font-tamil-sans: var(--font-google-sans), "Google Sans", sans-serif;
+
+  --animate-fade-in: fade-in 0.7s ease-out both;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-bronze);
+  color: var(--color-white);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
+}
+
+[lang="ta"] {
+  font-family: var(--font-tamil-serif);
+}
