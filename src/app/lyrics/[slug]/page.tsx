@@ -206,9 +206,9 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
             <ul className="mt-3 flex flex-col gap-1">
               {lyric.officialReferences.map((ref) => (
                 <li key={ref.label}>
-                  <a href={ref.url} className="font-sans text-sm text-bronze hover:underline">
+                  <Link href={ref.url} className="font-sans text-sm text-bronze hover:underline">
                     {ref.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
