@@ -46,7 +46,7 @@ export const mockLyrics: Lyric[] = [
     views: 184320,
     publishedAt: "2011-04-14",
     seo: {
-      title: "Kadal Ninaivugal Lyrics in Tamil – Kadal Meengal | Vivek — The Official World of Words",
+      title: "Kadal Ninaivugal Lyrics in Tamil – Kadal Meengal | Lyricist Vivek",
       description:
         "Read Kadal Ninaivugal Tamil lyrics from Kadal Meengal, written by lyricist Vivek. Explore transliteration, English meaning, song context and composer credits.",
       keywords: ["Kadal Ninaivugal lyrics", "Kadal Meengal songs", "Vivek lyrics Tamil"],
@@ -82,7 +82,7 @@ export const mockLyrics: Lyric[] = [
     views: 92110,
     publishedAt: "2011-04-14",
     seo: {
-      title: "Meenava Paattu Lyrics in Tamil – Kadal Meengal | Vivek — The Official World of Words",
+      title: "Meenava Paattu Lyrics in Tamil – Kadal Meengal | Lyricist Vivek",
       description:
         "Read Meenava Paattu Tamil lyrics from Kadal Meengal, written by lyricist Vivek, with transliteration and English meaning.",
       keywords: ["Meenava Paattu lyrics", "Kadal Meengal songs", "Vivek fishing song"],
@@ -118,7 +118,7 @@ export const mockLyrics: Lyric[] = [
     views: 156700,
     publishedAt: "2012-06-01",
     seo: {
-      title: "Vaanam Pesudhum Lyrics in Tamil – Vaanam Pesudhum | Vivek — The Official World of Words",
+      title: "Vaanam Pesudhum Lyrics in Tamil – Vaanam Pesudhum | Lyricist Vivek",
       description:
         "Read Vaanam Pesudhum Tamil title-track lyrics written by lyricist Vivek, with transliteration, English meaning and song context.",
       keywords: ["Vaanam Pesudhum lyrics", "Vivek title track", "Tamil monsoon song"],
@@ -153,7 +153,7 @@ export const mockLyrics: Lyric[] = [
     views: 210450,
     publishedAt: "2012-06-01",
     seo: {
-      title: "Anbe Vaa Lyrics in Tamil – Vaanam Pesudhum | Vivek — The Official World of Words",
+      title: "Anbe Vaa Lyrics in Tamil – Vaanam Pesudhum | Lyricist Vivek",
       description:
         "Read Anbe Vaa Tamil lyrics from Vaanam Pesudhum, written by lyricist Vivek, with transliteration and English meaning.",
       keywords: ["Anbe Vaa lyrics", "Vaanam Pesudhum songs", "Vivek love song"],
@@ -188,7 +188,7 @@ export const mockLyrics: Lyric[] = [
     views: 143200,
     publishedAt: "2013-08-09",
     seo: {
-      title: "Nenjil Oru Raagam Lyrics in Tamil – Nenjil Oru Raagam | Vivek — The Official World of Words",
+      title: "Nenjil Oru Raagam Lyrics in Tamil – Nenjil Oru Raagam | Lyricist Vivek",
       description:
         "Read Nenjil Oru Raagam Tamil title-track lyrics written by lyricist Vivek, with transliteration and English meaning.",
       keywords: ["Nenjil Oru Raagam lyrics", "Vivek love song", "Tamil campus romance song"],
@@ -223,7 +223,7 @@ export const mockLyrics: Lyric[] = [
     views: 88900,
     publishedAt: "2013-08-09",
     seo: {
-      title: "Kaditham Ondru Lyrics in Tamil – Nenjil Oru Raagam | Vivek — The Official World of Words",
+      title: "Kaditham Ondru Lyrics in Tamil – Nenjil Oru Raagam | Lyricist Vivek",
       description:
         "Read Kaditham Ondru Tamil lyrics from Nenjil Oru Raagam, written by lyricist Vivek, with transliteration and meaning.",
       keywords: ["Kaditham Ondru lyrics", "Nenjil Oru Raagam songs", "Vivek longing song"],
@@ -258,7 +258,7 @@ export const mockLyrics: Lyric[] = [
     views: 121080,
     publishedAt: "2014-01-15",
     seo: {
-      title: "Thiruvizha Vandhathu Lyrics in Tamil – Thiruvizha Naatkal | Vivek — The Official World of Words",
+      title: "Thiruvizha Vandhathu Lyrics in Tamil – Thiruvizha Naatkal | Lyricist Vivek",
       description:
         "Read Thiruvizha Vandhathu Tamil festival song lyrics from Thiruvizha Naatkal, written by lyricist Vivek.",
       keywords: ["Thiruvizha Vandhathu lyrics", "Thiruvizha Naatkal songs", "Vivek festival song"],
@@ -292,7 +292,7 @@ export const mockLyrics: Lyric[] = [
     views: 176430,
     publishedAt: "2014-01-15",
     seo: {
-      title: "Naadu Vaazhga Lyrics in Tamil – Thiruvizha Naatkal | Vivek — The Official World of Words",
+      title: "Naadu Vaazhga Lyrics in Tamil – Thiruvizha Naatkal | Lyricist Vivek",
       description:
         "Read Naadu Vaazhga Tamil pride anthem lyrics from Thiruvizha Naatkal, written by lyricist Vivek.",
       keywords: ["Naadu Vaazhga lyrics", "Tamil pride anthem", "Vivek Thiruvizha Naatkal songs"],
@@ -334,7 +334,7 @@ export const mockLyrics: Lyric[] = [
     views: 942300,
     publishedAt: "2015-09-25",
     seo: {
-      title: "Vetrikodi Kattu Lyrics in Tamil – Vetrikodi Kattu | Vivek — The Official World of Words",
+      title: "Vetrikodi Kattu Lyrics in Tamil – Vetrikodi Kattu | Lyricist Vivek",
       description:
         "Read Vetrikodi Kattu Tamil lyrics from Vetrikodi Kattu, the breakthrough anthem written by lyricist Vivek. Explore transliteration, meaning and writing notes.",
       keywords: ["Vetrikodi Kattu lyrics", "Vivek breakthrough song", "Tamil motivational anthem"],
@@ -368,7 +368,7 @@ export const mockLyrics: Lyric[] = [
     views: 705100,
     publishedAt: "2015-09-25",
     seo: {
-      title: "Thamizhan Suvasam Lyrics in Tamil – Vetrikodi Kattu | Vivek — The Official World of Words",
+      title: "Thamizhan Suvasam Lyrics in Tamil – Vetrikodi Kattu | Lyricist Vivek",
       description:
         "Read Thamizhan Suvasam Tamil pride anthem lyrics from Vetrikodi Kattu, written by lyricist Vivek.",
       keywords: ["Thamizhan Suvasam lyrics", "Vetrikodi Kattu songs", "Vivek Tamil pride song"],
@@ -402,7 +402,7 @@ export const mockLyrics: Lyric[] = [
     views: 264500,
     publishedAt: "2016-05-20",
     seo: {
-      title: "Sigappu Sooriyan Lyrics in Tamil – Sigappu Sooriyan | Vivek — The Official World of Words",
+      title: "Sigappu Sooriyan Lyrics in Tamil – Sigappu Sooriyan | Lyricist Vivek",
       description:
         "Read Sigappu Sooriyan Tamil title-track lyrics written by lyricist Vivek, with transliteration and English meaning.",
       keywords: ["Sigappu Sooriyan lyrics", "Vivek motivational song", "Tamil labour anthem"],
@@ -436,7 +436,7 @@ export const mockLyrics: Lyric[] = [
     views: 138760,
     publishedAt: "2016-05-20",
     seo: {
-      title: "Vervai Malar Lyrics in Tamil – Sigappu Sooriyan | Vivek — The Official World of Words",
+      title: "Vervai Malar Lyrics in Tamil – Sigappu Sooriyan | Lyricist Vivek",
       description: "Read Vervai Malar Tamil lyrics from Sigappu Sooriyan, written by lyricist Vivek.",
       keywords: ["Vervai Malar lyrics", "Sigappu Sooriyan songs", "Vivek labour song"],
     },
@@ -470,7 +470,7 @@ export const mockLyrics: Lyric[] = [
     views: 389200,
     publishedAt: "2017-11-10",
     seo: {
-      title: "Mannin Maindhan Lyrics in Tamil – Mannin Maindhan | Vivek — The Official World of Words",
+      title: "Mannin Maindhan Lyrics in Tamil – Mannin Maindhan | Lyricist Vivek",
       description: "Read Mannin Maindhan Tamil title-track lyrics written by lyricist Vivek, with meaning and context.",
       keywords: ["Mannin Maindhan lyrics", "Vivek Tamil pride song", "mother and soil song"],
     },
@@ -504,7 +504,7 @@ export const mockLyrics: Lyric[] = [
     views: 512900,
     publishedAt: "2017-11-10",
     seo: {
-      title: "Enga Amma Lyrics in Tamil – Mannin Maindhan | Vivek — The Official World of Words",
+      title: "Enga Amma Lyrics in Tamil – Mannin Maindhan | Lyricist Vivek",
       description: "Read Enga Amma Tamil mother-tribute song lyrics from Mannin Maindhan, written by lyricist Vivek.",
       keywords: ["Enga Amma lyrics", "Amma song Tamil", "Vivek mother song"],
     },
@@ -536,7 +536,7 @@ export const mockLyrics: Lyric[] = [
     views: 76200,
     publishedAt: "2018-03-02",
     seo: {
-      title: "Kanni Maram Lyrics in Tamil – Kanni Maram | Vivek — The Official World of Words",
+      title: "Kanni Maram Lyrics in Tamil – Kanni Maram | Lyricist Vivek",
       description: "Read Kanni Maram Tamil nature-themed lyrics written by lyricist Vivek, with transliteration and meaning.",
       keywords: ["Kanni Maram lyrics", "Vivek nature song", "Tamil forest song"],
     },
@@ -569,7 +569,7 @@ export const mockLyrics: Lyric[] = [
     views: 69340,
     publishedAt: "2018-03-02",
     seo: {
-      title: "Kaatril Kalandhu Lyrics in Tamil – Kanni Maram | Vivek — The Official World of Words",
+      title: "Kaatril Kalandhu Lyrics in Tamil – Kanni Maram | Lyricist Vivek",
       description: "Read Kaatril Kalandhu Tamil lyrics from Kanni Maram, written by lyricist Vivek, with meaning and context.",
       keywords: ["Kaatril Kalandhu lyrics", "Kanni Maram songs", "Vivek hope song"],
     },
@@ -601,7 +601,7 @@ export const mockLyrics: Lyric[] = [
     views: 198450,
     publishedAt: "2020-02-14",
     seo: {
-      title: "Uyir Meengal Lyrics in Tamil – Uyir Meengal | Vivek — The Official World of Words",
+      title: "Uyir Meengal Lyrics in Tamil – Uyir Meengal | Lyricist Vivek",
       description: "Read Uyir Meengal Tamil title-track lyrics written by lyricist Vivek, with transliteration and meaning.",
       keywords: ["Uyir Meengal lyrics", "Vivek coastal song", "Tamil friendship song"],
     },
@@ -634,7 +634,7 @@ export const mockLyrics: Lyric[] = [
     views: 112870,
     publishedAt: "2020-02-14",
     seo: {
-      title: "Nanban Kural Lyrics in Tamil – Uyir Meengal | Vivek — The Official World of Words",
+      title: "Nanban Kural Lyrics in Tamil – Uyir Meengal | Lyricist Vivek",
       description: "Read Nanban Kural Tamil friendship anthem lyrics from Uyir Meengal, written by lyricist Vivek.",
       keywords: ["Nanban Kural lyrics", "Uyir Meengal songs", "Vivek friendship song"],
     },
@@ -667,7 +667,7 @@ export const mockLyrics: Lyric[] = [
     views: 245600,
     publishedAt: "2023-04-21",
     seo: {
-      title: "Vaanavil Kanavu Lyrics in Tamil – Vaanavil Kanavu | Vivek — The Official World of Words",
+      title: "Vaanavil Kanavu Lyrics in Tamil – Vaanavil Kanavu | Lyricist Vivek",
       description: "Read Vaanavil Kanavu Tamil title-track lyrics written by lyricist Vivek, with transliteration and meaning.",
       keywords: ["Vaanavil Kanavu lyrics", "Vivek 2023 song", "Tamil hope song"],
     },
@@ -708,7 +708,7 @@ export const mockLyrics: Lyric[] = [
     views: 1284700,
     publishedAt: "2023-04-21",
     seo: {
-      title: "Naalai Namadhe Lyrics in Tamil – Vaanavil Kanavu | Vivek — The Official World of Words",
+      title: "Naalai Namadhe Lyrics in Tamil – Vaanavil Kanavu | Lyricist Vivek",
       description:
         "Read Naalai Namadhe Tamil lyrics from Vaanavil Kanavu, written by lyricist Vivek. Explore transliteration, English meaning, song context and composer credits.",
       keywords: ["Naalai Namadhe lyrics", "Vaanavil Kanavu songs", "Vivek Tamil anthem lyrics"],

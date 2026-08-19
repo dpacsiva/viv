@@ -7,9 +7,9 @@ import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
-  title: "Filmography — Every Film Vivek Has Written For",
+  title: "Other Works — Filmography by Vivek",
   description:
-    "Browse the complete filmography of lyricist Vivek across Tamil cinema — poster, list and timeline views, filterable by year, actor, director and composer.",
+    "Browse the filmography of Tamil lyricist Vivek across cinema — by year, actor, director and composer.",
   alternates: { canonical: "/films" },
 };
 
@@ -31,17 +31,16 @@ export default async function FilmsPage() {
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <SEOJsonLd
         data={[
-          breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Films" }]),
-          collectionPageSchema("Filmography", "The complete filmography of lyricist Vivek.", "/films"),
+          breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Other works" }]),
+          collectionPageSchema("Other Works", "The film works of Tamil lyricist Vivek.", "/films"),
         ]}
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Films" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Other works" }]} />
       <EditorialHeading as="h1" size="lg" className="mt-4">
-        Filmography
+        Other works
       </EditorialHeading>
       <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-slate">
-        Every film Vivek has written lyrics for, from his 2011 debut to his most recent release — browse by poster,
-        list or career timeline.
+        Every film Vivek has written lyrics for, from his 2011 debut to his most recent release.
       </p>
 
       <div className="mt-8">

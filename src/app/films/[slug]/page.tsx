@@ -3,13 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchFilmBySlug, fetchFilmsList } from "@/features/films/filmsApi";
 import { fetchLyricsList } from "@/features/lyrics/lyricsApi";
-import { fetchJournalList } from "@/features/journal/journalApi";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { MetadataList } from "@/components/ui/MetadataList";
 import { EditorialArt } from "@/components/media/EditorialArt";
-import { RelatedContent } from "@/components/content/RelatedContent";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
 import { breadcrumbSchema, filmSchema } from "@/lib/jsonLd";
 
@@ -42,9 +40,8 @@ export default async function FilmDetailPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  const [allLyrics, journal] = await Promise.all([fetchLyricsList({ pageSize: 100 }), fetchJournalList({})]);
+  const allLyrics = await fetchLyricsList({ pageSize: 100 });
   const filmLyrics = allLyrics.items.filter((l) => l.film.slug === film.slug);
-  const relatedJournal = journal.items.filter((a) => (film.relatedJournalSlugs || []).includes(a.slug));
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8" style={{ ["--film-accent" as string]: film.accentColor }}>
@@ -52,13 +49,13 @@ export default async function FilmDetailPage({ params }: { params: Promise<{ slu
         data={[
           breadcrumbSchema([
             { label: "Home", href: "/" },
-            { label: "Films", href: "/films" },
+            { label: "Other works", href: "/films" },
             { label: film.name },
           ]),
           filmSchema(film),
         ]}
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Films", href: "/films" }, { label: film.name }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Other works", href: "/films" }, { label: film.name }]} />
 
       <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-[200px_1fr]">
         <EditorialArt
@@ -165,13 +162,6 @@ export default async function FilmDetailPage({ params }: { params: Promise<{ slu
           </div>
         </section>
       )}
-
-      <div className="mt-12 border-t border-border pt-10">
-        <RelatedContent
-          label="Related Journal Stories"
-          items={relatedJournal.map((a) => ({ title: a.title, subtitle: a.category, href: `/journal/${a.slug}` }))}
-        />
-      </div>
     </div>
   );
 }

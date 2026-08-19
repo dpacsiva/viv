@@ -6,3 +6,4 @@ export { mockCollaborators } from "./mockCollaborators";
 export { mockJournal } from "./mockJournal";
 export { mockAwards } from "./mockAwards";
 export { mockJourney } from "./mockJourney";
+export { mockQuotes } from "./mockQuotes";

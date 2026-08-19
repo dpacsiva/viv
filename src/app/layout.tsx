@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_NAME,
-    template: "%s | Vivek — The Official World of Words",
+    template: "%s | Lyricist Vivek",
   },
   description: SITE_DESCRIPTION,
   openGraph: {

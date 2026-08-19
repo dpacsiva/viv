@@ -4,7 +4,7 @@ const PALETTES: { keys: string[]; from: string; to: string }[] = [
   { keys: ["summit", "motivation", "vetri"], from: "#f0dcb8", to: "#e0b988" },
   { keys: ["leaf", "nature", "forest", "kanni"], from: "#dfe6d3", to: "#c4d1b0" },
   { keys: ["hands", "friendship", "nanban"], from: "#e2ddec", to: "#cbc2e0" },
-  { keys: ["flag", "mass", "fire", "thiruvizha", "festival"], from: "#f2ceb0", to: "#e8a878" },
+  { keys: ["flag", "mass", "fire", "thiruvizha", "festival", "vijay", "thalapathy"], from: "#f2ceb0", to: "#e8a878" },
   { keys: ["embrace", "mother", "amma", "mannin"], from: "#f0ddd6", to: "#e0bfae" },
   { keys: ["dawn-bird", "hope", "vaanavil", "window"], from: "#dbe6ee", to: "#bfd3e2" },
   { keys: ["coast", "kadal", "meengal"], from: "#d7e4e2", to: "#b7cdc9" },
@@ -36,7 +36,7 @@ function resolveIcon(variant: string): IconKind {
   if (lower.includes("summit") || lower.includes("motivation") || lower.includes("vetri")) return "summit";
   if (lower.includes("leaf") || lower.includes("nature") || lower.includes("forest") || lower.includes("kanni")) return "leaf";
   if (lower.includes("hands") || lower.includes("friendship") || lower.includes("nanban")) return "hands";
-  if (lower.includes("flag") || lower.includes("mass") || lower.includes("fire") || lower.includes("festival")) return "flag";
+  if (lower.includes("flag") || lower.includes("mass") || lower.includes("fire") || lower.includes("festival") || lower.includes("vijay") || lower.includes("thalapathy")) return "flag";
   if (lower.includes("embrace") || lower.includes("mother") || lower.includes("amma") || lower.includes("mannin")) return "embrace";
   if (lower.includes("dawn-bird") || lower.includes("hope") || lower.includes("vaanavil")) return "bird";
   if (lower.includes("coast") || lower.includes("kadal") || lower.includes("meengal") || lower.includes("monsoon")) return "wave";

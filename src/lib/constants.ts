@@ -1,55 +1,27 @@
-export const SITE_NAME = "Vivek — The Official World of Words";
-export const SITE_SHORT_NAME = "Vivek";
+export const SITE_NAME = "Lyricist Vivek";
+export const SITE_SHORT_NAME = "Lyricist Vivek";
 export const SITE_URL = "https://www.vivekarchive.in";
 export const SITE_DESCRIPTION =
-  "The official home of Tamil lyricist Vivek's words and works — lyrics, transliteration, meanings, writing stories, filmography, awards and the journey behind the words.";
+  "The official archive of Tamil lyricist Vivek — explore his lyrics, film works, journey, awards and quotes.";
 
 export const NAV_LINKS = [
-  { label: "Works", href: "/lyrics" },
-  { label: "Journey", href: "/journey" },
-  { label: "Words", href: "/words" },
-  { label: "Journal", href: "/journal" },
-  { label: "Collaborations", href: "/collaborations" },
-] as const;
-
-export const MORE_LINKS = [
-  { label: "Films", href: "/films" },
-  { label: "Themes", href: "/themes" },
-  { label: "Writing Process", href: "/writing-process" },
-  { label: "Handwritten Archive", href: "/handwritten-archive" },
+  { label: "Home", href: "/" },
+  { label: "Profile / Journey", href: "/journey" },
+  { label: "Lyrics", href: "/lyrics" },
+  { label: "Other works", href: "/films" },
   { label: "Awards", href: "/awards" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "About", href: "/about" },
+  { label: "Quotes", href: "/quotes" },
 ] as const;
 
 export const FOOTER_COLUMNS = [
   {
     title: "Explore",
     links: [
-      { label: "Works", href: "/lyrics" },
+      { label: "Profile / Journey", href: "/journey" },
       { label: "Lyrics", href: "/lyrics" },
-      { label: "Films", href: "/films" },
-      { label: "Journey", href: "/journey" },
-      { label: "Words", href: "/words" },
-    ],
-  },
-  {
-    title: "Read",
-    links: [
-      { label: "Journal", href: "/journal" },
-      { label: "Collaborations", href: "/collaborations" },
+      { label: "Other works", href: "/films" },
       { label: "Awards", href: "/awards" },
-      { label: "Writing Process", href: "/writing-process" },
-      { label: "Handwritten Archive", href: "/handwritten-archive" },
-    ],
-  },
-  {
-    title: "About",
-    links: [
-      { label: "About Vivek", href: "/about" },
-      { label: "Gallery", href: "/gallery" },
-      { label: "Contact", href: "/contact" },
-      { label: "Search", href: "/search" },
+      { label: "Quotes", href: "/quotes" },
     ],
   },
   {
@@ -69,6 +41,7 @@ export const SOCIAL_LINKS = [
 ] as const;
 
 export const THEME_SLUGS = [
+  "thalapathy-vijay-songs",
   "love",
   "tamil-pride",
   "motivation",
@@ -77,4 +50,6 @@ export const THEME_SLUGS = [
   "mass-and-fire",
   "mother",
   "hope",
+  "longing",
+  "celebration",
 ] as const;

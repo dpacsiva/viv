@@ -13,7 +13,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l1", "l2", "l5", "l6", "l9", "l10", "l17", "l18"],
     notableWorks: ["Kadal Meengal", "Nenjil Oru Raagam", "Vetrikodi Kattu", "Uyir Meengal"],
     seo: {
-      title: "Ilan Vasan — Composer | Vivek — The Official World of Words",
+      title: "Ilan Vasan — Composer | Lyricist Vivek",
       description:
         "Explore the collaboration between composer Ilan Vasan and lyricist Vivek across four Tamil films.",
       keywords: ["Ilan Vasan composer", "Vivek Ilan Vasan songs"],
@@ -31,7 +31,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l3", "l4", "l7", "l8", "l11", "l12", "l13", "l14", "l19", "l20"],
     notableWorks: ["Vaanam Pesudhum", "Sigappu Sooriyan", "Mannin Maindhan", "Vaanavil Kanavu"],
     seo: {
-      title: "Harish Mohan — Composer | Vivek — The Official World of Words",
+      title: "Harish Mohan — Composer | Lyricist Vivek",
       description: "Read about composer Harish Mohan's long-running collaboration with lyricist Vivek.",
       keywords: ["Harish Mohan composer", "Vivek Harish Mohan songs"],
     },
@@ -48,7 +48,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l1", "l5", "l6", "l17", "l19", "l20"],
     notableWorks: ["Kadal Ninaivugal", "Nenjil Oru Raagam", "Vaanavil Kanavu"],
     seo: {
-      title: "Meera Saravanan — Playback Singer | Vivek — The Official World of Words",
+      title: "Meera Saravanan — Playback Singer | Lyricist Vivek",
       description: "Explore singer Meera Saravanan's collaborations on lyricist Vivek's songs.",
       keywords: ["Meera Saravanan singer", "Vivek playback singer"],
     },
@@ -65,7 +65,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l9", "l10", "l11", "l12", "l13", "l15"],
     notableWorks: ["Vetrikodi Kattu", "Sigappu Sooriyan", "Mannin Maindhan"],
     seo: {
-      title: "Arun Ilamaran — Playback Singer | Vivek — The Official World of Words",
+      title: "Arun Ilamaran — Playback Singer | Lyricist Vivek",
       description: "Read about singer Arun Ilamaran's mass-anthem collaborations with lyricist Vivek.",
       keywords: ["Arun Ilamaran singer", "Vivek mass song singer"],
     },
@@ -82,7 +82,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l1", "l2", "l7", "l8", "l17", "l18"],
     notableWorks: ["Kadal Meengal", "Thiruvizha Naatkal", "Uyir Meengal"],
     seo: {
-      title: "Bharath Raaja — Director | Vivek — The Official World of Words",
+      title: "Bharath Raaja — Director | Lyricist Vivek",
       description: "Explore director Bharath Raaja's collaborations with lyricist Vivek from debut to breakthrough.",
       keywords: ["Bharath Raaja director", "Vivek debut film director"],
     },
@@ -99,7 +99,7 @@ export const mockCollaborators: Collaborator[] = [
     lyricIds: ["l1", "l5", "l6", "l9", "l10", "l13", "l14", "l17", "l18"],
     notableWorks: ["Kadal Meengal", "Vetrikodi Kattu", "Mannin Maindhan", "Uyir Meengal"],
     seo: {
-      title: "Arjun Kumaran — Actor | Vivek — The Official World of Words",
+      title: "Arjun Kumaran — Actor | Lyricist Vivek",
       description: "Read about actor Arjun Kumaran's recurring collaborations with lyricist Vivek across five films.",
       keywords: ["Arjun Kumaran actor", "Vivek lead actor collaboration"],
     },

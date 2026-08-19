@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchLyricBySlug, fetchLyricsList } from "@/features/lyrics/lyricsApi";
 import { fetchThemesList } from "@/features/themes/themesApi";
-import { fetchCollaboratorsList } from "@/features/collaborations/collaborationsApi";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
@@ -52,10 +51,9 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
     notFound();
   }
 
-  const [allLyrics, themes, collaborators] = await Promise.all([
+  const [allLyrics, themes] = await Promise.all([
     fetchLyricsList({ pageSize: 100 }),
     fetchThemesList(),
-    fetchCollaboratorsList(),
   ]);
 
   const relatedLyrics = (lyric.relatedLyrics || [])
@@ -65,8 +63,6 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
   const themeItems = lyric.theme
     .map((slug) => themes.items.find((t) => t.slug === slug))
     .filter((t): t is NonNullable<typeof t> => Boolean(t));
-
-  const composerCollaborator = collaborators.items.find((c) => lyric.composer.includes(c.name));
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
@@ -152,9 +148,9 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
             <ul className="mt-3 flex flex-col gap-3">
               {lyric.importantWords.map((w) => (
                 <li key={w.wordSlug}>
-                  <Link href={`/words/${w.wordSlug}`} className="font-serif text-lg text-bronze hover:underline" lang="ta">
+                  <span className="font-serif text-lg text-bronze" lang="ta">
                     {w.tamil}
-                  </Link>
+                  </span>
                   <span className="ml-2 font-sans text-sm text-slate">— {w.meaning}</span>
                   {w.reason && <p className="mt-1 font-sans text-sm text-slate">{w.reason}</p>}
                 </li>
@@ -225,12 +221,6 @@ export default async function LyricDetailPage({ params }: { params: Promise<{ sl
           label="Related Film"
           items={[{ title: lyric.film.name, subtitle: String(lyric.film.year), href: `/films/${lyric.film.slug}` }]}
         />
-        {composerCollaborator && (
-          <RelatedContent
-            label="Related Composer"
-            items={[{ title: composerCollaborator.name, subtitle: "Composer", href: `/collaborations/${composerCollaborator.slug}` }]}
-          />
-        )}
         <RelatedContent
           label="Related Themes"
           items={themeItems.map((t) => ({ title: t.name, href: `/themes/${t.slug}` }))}

@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search Vivek's words and works for lyrics, films, words, themes and journal articles.",
+  description: "Search Vivek's lyrics, films, themes and quotes.",
   robots: { index: false, follow: true },
 };
 

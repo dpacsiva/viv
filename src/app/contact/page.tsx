@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with the Vivek — The Official World of Words team.",
+  description: "Get in touch with the Lyricist Vivek team.",
   alternates: { canonical: "/contact" },
 };
 

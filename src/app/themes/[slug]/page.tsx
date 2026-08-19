@@ -71,14 +71,22 @@ export default async function ThemeDetailPage({ params }: { params: Promise<{ sl
       </div>
 
       <div className="mt-12 border-t border-border pt-8">
-        <p className="font-sans text-sm text-slate">
-          {themeLyrics.length} {themeLyrics.length === 1 ? "lyric" : "lyrics"}
-        </p>
-        <div className="mt-4">
-          {themeLyrics.map((lyric, i) => (
-            <LyricCard key={lyric.id} lyric={lyric} index={i} />
-          ))}
-        </div>
+        {themeLyrics.length > 0 ? (
+          <>
+            <p className="font-sans text-sm text-slate">
+              {themeLyrics.length} {themeLyrics.length === 1 ? "lyric" : "lyrics"}
+            </p>
+            <div className="mt-4">
+              {themeLyrics.map((lyric, i) => (
+                <LyricCard key={lyric.id} lyric={lyric} index={i} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <p className="max-w-2xl font-sans text-base leading-relaxed text-slate">
+            This collection is being prepared for the archive. The first verified songs will appear here soon.
+          </p>
+        )}
       </div>
     </div>
   );

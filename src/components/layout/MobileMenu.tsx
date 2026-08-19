@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV_LINKS, MORE_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SITE_SHORT_NAME } from "@/lib/constants";
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
@@ -43,7 +43,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             transition={{ type: "tween", duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="mb-6 flex items-center justify-between">
-              <span className="font-serif text-xl font-semibold tracking-[0.15em]">VIVEK</span>
+              <span className="font-serif text-xl font-semibold tracking-tight">{SITE_SHORT_NAME}</span>
               <button
                 type="button"
                 onClick={onClose}
@@ -56,7 +56,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               </button>
             </div>
             <nav className="flex flex-col" aria-label="Mobile primary">
-              {[...NAV_LINKS, ...MORE_LINKS].map((link) => (
+              {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

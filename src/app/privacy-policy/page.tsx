@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Vivek — The Official World of Words.",
+  description: "Privacy policy for Lyricist Vivek.",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -25,13 +24,7 @@ export default function PrivacyPolicyPage() {
           We do not sell or share personal information with third parties. Anonymous usage analytics may be
           collected to understand which lyrics, films and articles readers find most valuable.
         </p>
-        <p>
-          For any privacy-related questions or requests to remove your data, please reach out through the{" "}
-          <Link href="/contact" className="text-bronze hover:underline">
-            Contact
-          </Link>{" "}
-          page.
-        </p>
+        <p>For any privacy-related questions or requests to remove your data, please contact the site owner.</p>
       </div>
     </div>
   );

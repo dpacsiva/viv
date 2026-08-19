@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { fetchThemesList } from "@/features/themes/themesApi";
+import { THEME_SLUGS } from "@/lib/constants";
 import { ThemeCard } from "@/components/cards/ThemeCard";
 import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -9,12 +10,15 @@ import { breadcrumbSchema, collectionPageSchema } from "@/lib/jsonLd";
 export const metadata: Metadata = {
   title: "Themes — Browse Vivek's Lyrics by Theme",
   description:
-    "Explore lyricist Vivek's songs grouped by theme — love, Tamil pride, motivation, nature, friendship, mass and fire, mother, hope and more.",
+    "Explore lyricist Vivek's songs grouped by theme, including Thalapathy Vijay songs, love, Tamil pride, motivation and more.",
   alternates: { canonical: "/themes" },
 };
 
 export default async function ThemesPage() {
   const { items } = await fetchThemesList();
+  const orderedThemes = THEME_SLUGS.map((slug) => items.find((theme) => theme.slug === slug)).filter(
+    (theme): theme is NonNullable<typeof theme> => Boolean(theme)
+  );
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
@@ -33,7 +37,7 @@ export default async function ThemesPage() {
       </p>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {items.map((theme) => (
+        {orderedThemes.map((theme) => (
           <ThemeCard key={theme.id} theme={theme} />
         ))}
       </div>

@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms of use for Vivek — The Official World of Words.",
+  description: "Terms of use for Lyricist Vivek.",
   alternates: { canonical: "/terms" },
 };
 

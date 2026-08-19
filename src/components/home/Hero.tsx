@@ -5,27 +5,14 @@ import { FadeInSection } from "@/components/motion/FadeInSection";
 function HeroText() {
   return (
     <>
-      <h1 className="text-center font-serif text-3xl leading-[1.05] text-white sm:text-left sm:text-6xl lg:text-7xl sm:text-ink">
-        Words that
-        <br />
-        become
-        <br />
-        <span className="inline-block text-white bg-bronze px-3 py-1 rounded-md shadow-lg shadow-amber-600/30 sm:bg-transparent sm:px-0 sm:py-0 sm:rounded-none sm:shadow-none sm:text-bronze">
-          memories.
-        </span>
+      <h1 className="text-center font-serif text-5xl font-semibold leading-none tracking-tight text-white sm:text-left sm:text-7xl sm:text-ink lg:text-8xl">
+        Lyricist Vivek
       </h1>
-      <span className="mx-auto mt-3 block h-px w-16 bg-bronze sm:mx-0 sm:mt-6" aria-hidden="true" />
-      <p className="mx-auto mt-3 max-w-md text-center font-sans text-sm leading-relaxed text-white/90 sm:mx-0 sm:mt-6 sm:text-left sm:text-lg sm:text-slate">
-        The official home of Vivek — lyricist, poet and dreamer.
-      </p>
-      <p className="mt-2 hidden max-w-md font-sans text-base leading-relaxed text-slate sm:mt-3 sm:block sm:text-lg">
-        Explore the lyrics, stories and journey behind the lines that live in our hearts.
-      </p>
       <Link
         href="/lyrics"
-        className="mt-4 flex w-full justify-center items-center gap-2 font-sans text-sm font-semibold text-white underline-offset-4 hover:underline sm:w-auto sm:justify-start sm:text-bronze sm:mt-8 sm:text-base"
+        className="mt-6 flex w-full items-center justify-center gap-2 font-sans text-sm font-semibold text-white underline-offset-4 hover:underline sm:mt-8 sm:w-auto sm:justify-start sm:text-bronze sm:text-base"
       >
-        Explore His Works
+        Explore Lyrics
         <span aria-hidden="true">→</span>
       </Link>
     </>
@@ -72,7 +59,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Mobile: text top-and-centered; sm+: text vertically centered on the left */}
+      {/* Mobile: text centered over the image; sm+: text vertically centered on the left */}
       <div className="absolute inset-0 flex items-center justify-center px-6 sm:items-center sm:justify-start sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-7xl justify-center sm:block">
           <div className="relative w-fit">

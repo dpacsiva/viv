@@ -26,7 +26,7 @@ export const mockFilms: Film[] = [
     ],
     relatedJournalSlugs: ["how-a-fishing-village-wrote-itself-into-my-first-song"],
     seo: {
-      title: "Kadal Meengal (2011) — Vivek's Debut Film | Vivek — The Official World of Words",
+      title: "Kadal Meengal (2011) — Vivek's Debut Film | Lyricist Vivek",
       description:
         "Explore Kadal Meengal (2011), lyricist Vivek's debut film, with full lyrics, writing notes and behind-the-song stories.",
       keywords: ["Kadal Meengal lyrics", "Vivek debut film", "Kadal Meengal songs"],
@@ -48,7 +48,7 @@ export const mockFilms: Film[] = [
     careerPeriod: "early-years",
     lyricIds: ["l3", "l4"],
     seo: {
-      title: "Vaanam Pesudhum (2012) Lyrics & Film Details | Vivek — The Official World of Words",
+      title: "Vaanam Pesudhum (2012) Lyrics & Film Details | Lyricist Vivek",
       description: "Read all Vivek-written lyrics from Vaanam Pesudhum (2012) with English meaning and context.",
       keywords: ["Vaanam Pesudhum lyrics", "Vivek 2012 film"],
     },
@@ -69,7 +69,7 @@ export const mockFilms: Film[] = [
     careerPeriod: "early-years",
     lyricIds: ["l5", "l6"],
     seo: {
-      title: "Nenjil Oru Raagam (2013) Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Nenjil Oru Raagam (2013) Lyrics by Vivek | Lyricist Vivek",
       description: "Explore Nenjil Oru Raagam (2013) lyrics written by Vivek, with transliteration and meaning.",
       keywords: ["Nenjil Oru Raagam lyrics", "Vivek romantic album"],
     },
@@ -90,7 +90,7 @@ export const mockFilms: Film[] = [
     careerPeriod: "early-years",
     lyricIds: ["l7", "l8"],
     seo: {
-      title: "Thiruvizha Naatkal (2014) Lyrics & Songs | Vivek — The Official World of Words",
+      title: "Thiruvizha Naatkal (2014) Lyrics & Songs | Lyricist Vivek",
       description: "Read Thiruvizha Naatkal (2014) song lyrics written by lyricist Vivek, with meaning and context.",
       keywords: ["Thiruvizha Naatkal lyrics", "Vivek festival song"],
     },
@@ -119,7 +119,7 @@ export const mockFilms: Film[] = [
     gallery: [{ variant: "arena-photo-1", caption: "Recording session for 'Vetrikodi Kattu', 2015." }],
     relatedJournalSlugs: ["the-making-of-vetrikodi-kattu"],
     seo: {
-      title: "Vetrikodi Kattu (2015) — Vivek's Breakthrough Film | Vivek — The Official World of Words",
+      title: "Vetrikodi Kattu (2015) — Vivek's Breakthrough Film | Lyricist Vivek",
       description:
         "Explore Vetrikodi Kattu (2015), the breakthrough film that made Vivek a household name, with full lyrics and writing notes.",
       keywords: ["Vetrikodi Kattu lyrics", "Vivek breakthrough film", "Thamizhan Suvasam lyrics"],
@@ -141,7 +141,7 @@ export const mockFilms: Film[] = [
     careerPeriod: "breakthrough",
     lyricIds: ["l11", "l12"],
     seo: {
-      title: "Sigappu Sooriyan (2016) Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Sigappu Sooriyan (2016) Lyrics by Vivek | Lyricist Vivek",
       description: "Read Sigappu Sooriyan (2016) motivational song lyrics written by lyricist Vivek.",
       keywords: ["Sigappu Sooriyan lyrics", "Vivek motivational song"],
     },
@@ -166,7 +166,7 @@ export const mockFilms: Film[] = [
     awards: [{ id: "aw3", name: "Southern Screen Critics Circle", year: 2018, category: "Best Lyrics", won: true }],
     relatedJournalSlugs: ["why-i-write-about-amma"],
     seo: {
-      title: "Mannin Maindhan (2017) Lyrics & Songs | Vivek — The Official World of Words",
+      title: "Mannin Maindhan (2017) Lyrics & Songs | Lyricist Vivek",
       description: "Explore Mannin Maindhan (2017) lyrics by Vivek including 'Enga Amma', with meaning and context.",
       keywords: ["Mannin Maindhan lyrics", "Enga Amma lyrics", "Vivek mother song"],
     },
@@ -187,7 +187,7 @@ export const mockFilms: Film[] = [
     careerPeriod: "peak-mass-era",
     lyricIds: ["l15", "l16"],
     seo: {
-      title: "Kanni Maram (2018) Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Kanni Maram (2018) Lyrics by Vivek | Lyricist Vivek",
       description: "Read Kanni Maram (2018) nature-themed song lyrics written by lyricist Vivek.",
       keywords: ["Kanni Maram lyrics", "Vivek nature song"],
     },
@@ -209,7 +209,7 @@ export const mockFilms: Film[] = [
     lyricIds: ["l17", "l18"],
     relatedJournalSlugs: ["how-a-fishing-village-wrote-itself-into-my-first-song"],
     seo: {
-      title: "Uyir Meengal (2020) Lyrics & Film Details | Vivek — The Official World of Words",
+      title: "Uyir Meengal (2020) Lyrics & Film Details | Lyricist Vivek",
       description: "Explore Uyir Meengal (2020), Vivek's spiritual return to the coast, with lyrics and writing notes.",
       keywords: ["Uyir Meengal lyrics", "Vivek 2020 film"],
     },
@@ -234,7 +234,7 @@ export const mockFilms: Film[] = [
     awards: [{ id: "aw4", name: "Tamil Literary Guild Award", year: 2023, category: "Best Lyrics", won: true }],
     relatedJournalSlugs: ["why-i-write-about-tamil"],
     seo: {
-      title: "Vaanavil Kanavu (2023) Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Vaanavil Kanavu (2023) Lyrics by Vivek | Lyricist Vivek",
       description:
         "Read lyrics from Vaanavil Kanavu (2023), Vivek's latest film, including 'Naalai Namadhe', with meaning and context.",
       keywords: ["Vaanavil Kanavu lyrics", "Naalai Namadhe lyrics", "Vivek 2023 film"],

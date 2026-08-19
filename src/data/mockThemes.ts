@@ -2,6 +2,20 @@ import type { Theme } from "@/types";
 
 export const mockThemes: Theme[] = [
   {
+    id: "th-vijay",
+    slug: "thalapathy-vijay-songs",
+    name: "Thalapathy Vijay Songs",
+    description:
+      "A dedicated collection of Vivek's songs written for Thalapathy Vijay — a focused theme for the archive's first review build.",
+    watercolorVariant: "vijay-flag",
+    lyricIds: [],
+    seo: {
+      title: "Thalapathy Vijay Songs by Vivek | Lyricist Vivek",
+      description: "Explore songs written by Tamil lyricist Vivek for Thalapathy Vijay.",
+      keywords: ["Thalapathy Vijay songs Vivek", "Vijay lyrics Vivek", "Tamil Vijay songs"],
+    },
+  },
+  {
     id: "th1",
     slug: "love",
     name: "Love",
@@ -12,7 +26,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/love.webp",
     lyricIds: ["l1", "l4", "l5", "l17"],
     seo: {
-      title: "Love Songs Lyrics in Tamil by Vivek | Vivek — The Official World of Words",
+      title: "Love Songs Lyrics in Tamil by Vivek | Lyricist Vivek",
       description:
         "Explore Tamil love song lyrics written by lyricist Vivek, with transliteration, English meaning and the stories behind each line.",
       keywords: ["Vivek love songs", "Tamil love lyrics", "Vivek lyricist love"],
@@ -29,7 +43,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/tamil-pride.webp",
     lyricIds: ["l8", "l10", "l13", "l20"],
     seo: {
-      title: "Tamil Pride Song Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Tamil Pride Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Read Tamil pride anthem lyrics written by lyricist Vivek celebrating language, heritage and identity.",
       keywords: ["Tamil pride songs", "Thamizhan lyrics", "Vivek Tamil anthem"],
@@ -46,7 +60,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/motivation.webp",
     lyricIds: ["l9", "l11", "l12", "l20"],
     seo: {
-      title: "Motivational Song Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Motivational Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Discover motivational and rousing Tamil film song lyrics written by lyricist Vivek, with meaning and context.",
       keywords: ["motivational Tamil songs", "Vivek mass song lyrics"],
@@ -63,7 +77,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/nature.webp",
     lyricIds: ["l1", "l2", "l3", "l15", "l16"],
     seo: {
-      title: "Nature-Themed Tamil Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Nature-Themed Tamil Lyrics by Vivek | Lyricist Vivek",
       description:
         "Explore Tamil lyrics inspired by nature — sea, sky, soil and season — written by lyricist Vivek.",
       keywords: ["Tamil nature songs", "Vivek lyrics nature imagery"],
@@ -80,7 +94,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/friendship.webp",
     lyricIds: ["l2", "l7", "l17", "l18"],
     seo: {
-      title: "Friendship Song Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Friendship Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Read Tamil friendship anthem lyrics written by lyricist Vivek celebrating loyalty and companionship.",
       keywords: ["Tamil friendship songs", "Nanban lyrics Vivek"],
@@ -97,7 +111,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/mass-and-fire.webp",
     lyricIds: ["l7", "l9", "l11", "l12"],
     seo: {
-      title: "Mass Anthem Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Mass Anthem Lyrics by Vivek | Lyricist Vivek",
       description:
         "Explore high-energy mass and fire Tamil anthem lyrics written by lyricist Vivek for landmark hero entries.",
       keywords: ["Tamil mass song lyrics", "Vivek fire song", "hero entry song lyrics"],
@@ -114,7 +128,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/mother.webp",
     lyricIds: ["l13", "l14"],
     seo: {
-      title: "Amma Songs Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Amma Songs Lyrics by Vivek | Lyricist Vivek",
       description:
         "Read tender mother-themed Tamil song lyrics written by lyricist Vivek, with English meaning and context.",
       keywords: ["Amma Tamil song lyrics", "mother song Vivek"],
@@ -131,7 +145,7 @@ export const mockThemes: Theme[] = [
     image: "/images/themes/hope.webp",
     lyricIds: ["l3", "l16", "l19", "l20"],
     seo: {
-      title: "Hope & Resilience Song Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Hope & Resilience Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Discover uplifting, hopeful Tamil song lyrics written by lyricist Vivek about resilience and tomorrow.",
       keywords: ["hope Tamil songs", "Naalai Namadhe lyrics", "Vivek hopeful lyrics"],
@@ -147,7 +161,7 @@ export const mockThemes: Theme[] = [
     watercolorVariant: "window",
     lyricIds: ["l4", "l6"],
     seo: {
-      title: "Longing & Separation Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Longing & Separation Lyrics by Vivek | Lyricist Vivek",
       description:
         "Read Tamil songs of longing and separation written by lyricist Vivek, with transliteration and meaning.",
       keywords: ["Tamil longing songs", "pirivu paadal lyrics"],
@@ -163,7 +177,7 @@ export const mockThemes: Theme[] = [
     watercolorVariant: "festival",
     lyricIds: ["l7", "l18"],
     seo: {
-      title: "Celebration Song Lyrics by Vivek | Vivek — The Official World of Words",
+      title: "Celebration Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Explore festive celebration Tamil song lyrics written by lyricist Vivek for weddings and homecomings.",
       keywords: ["Tamil celebration songs", "festival song lyrics Vivek"],
