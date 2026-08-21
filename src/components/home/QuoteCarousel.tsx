@@ -70,7 +70,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
             </AnimatePresence>
           </div>
 
-          <div className="relative z-10 mt-6 flex flex-wrap items-center gap-1.5 sm:mt-10 sm:gap-2" aria-label="Choose a quote">
+          <div className="absolute bottom-8 left-4 right-4 z-10 flex flex-wrap items-center gap-1.5 sm:left-8 sm:right-8 sm:gap-2 lg:left-16 lg:right-16" aria-label="Choose a quote">
             {quotes.map((quote, index) => (
               <button
                 key={quote.id}
@@ -93,7 +93,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
             fill
             priority={false}
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover object-[72%_center]"
+            className="object-cover object-[72%_center] grayscale contrast-110"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/20 via-transparent to-transparent" aria-hidden="true" />
         </div>
