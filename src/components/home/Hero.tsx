@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { FadeInSection } from "@/components/motion/FadeInSection";
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <FadeInSection as="section" className="relative w-full overflow-hidden">
       {/* Mobile cover photo */}
       <div className="relative aspect-[1/2] w-full sm:hidden">
         <Image
@@ -27,6 +28,6 @@ export function Hero() {
           className="object-cover object-[62%_center]"
         />
       </div>
-    </section>
+    </FadeInSection>
   );
 }

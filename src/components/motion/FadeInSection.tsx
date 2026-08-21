@@ -3,8 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Adds a subtle focus reveal without moving the page vertically. The content
- * remains visible in the server-rendered HTML even before motion hydrates.
+ * Adds a subtle, one-time reveal as a section enters the viewport.
  */
 export function FadeInSection({
   children,
@@ -23,10 +22,10 @@ export function FadeInSection({
   return (
     <MotionTag
       className={className}
-      initial={reducedMotion ? undefined : { scale: 0.99, filter: "blur(3px)" }}
-      whileInView={reducedMotion ? undefined : { scale: 1, filter: "blur(0px)" }}
+      initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
+      whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.72, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </MotionTag>

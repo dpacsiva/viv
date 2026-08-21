@@ -25,9 +25,13 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
   const activeQuote = quotes[activeIndex] || quotes[0];
 
   return (
-    <section
+    <motion.section
       aria-label="Selected lyrics"
       className="bg-ink text-ivory"
+      initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
+      whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -94,6 +98,6 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
           <div className="absolute inset-0 bg-gradient-to-r from-ink/20 via-transparent to-transparent" aria-hidden="true" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

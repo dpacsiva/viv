@@ -55,7 +55,7 @@ export function ArchiveStats() {
       ref={sectionRef}
       aria-label="Archive highlights"
       className="border-y border-white/10 bg-ink text-ivory"
-      initial={reducedMotion ? undefined : { opacity: 0, y: 12 }}
+      initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
       whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
