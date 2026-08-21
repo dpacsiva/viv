@@ -6,18 +6,17 @@ export const SITE_DESCRIPTION =
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Profile / Journey", href: "/journey" },
+  { label: "Profile", href: "/journey" },
   { label: "Lyrics", href: "/lyrics" },
   { label: "Other works", href: "/films" },
   { label: "Awards", href: "/awards" },
-  { label: "Quotes", href: "/quotes" },
 ] as const;
 
 export const FOOTER_COLUMNS = [
   {
     title: "Explore",
     links: [
-      { label: "Profile / Journey", href: "/journey" },
+      { label: "Profile", href: "/journey" },
       { label: "Lyrics", href: "/lyrics" },
       { label: "Other works", href: "/films" },
       { label: "Awards", href: "/awards" },
@@ -43,13 +42,8 @@ export const SOCIAL_LINKS = [
 export const THEME_SLUGS = [
   "thalapathy-vijay-songs",
   "love",
-  "tamil-pride",
   "motivation",
-  "nature",
-  "friendship",
-  "mass-and-fire",
-  "mother",
-  "hope",
-  "longing",
   "celebration",
+  "popular",
+  "others",
 ] as const;

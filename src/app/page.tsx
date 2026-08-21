@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fetchThemesList } from "@/features/themes/themesApi";
 import { THEME_SLUGS, SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import { Hero } from "@/components/home/Hero";
+import { ArchiveStats } from "@/components/home/ArchiveStats";
 import { ExploreThemes } from "@/components/home/ExploreThemes";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <ArchiveStats />
       <ExploreThemes themes={orderedThemes} />
     </>
   );

@@ -1,5 +1,5 @@
 import type MockAdapter from "axios-mock-adapter";
-import { mockLyrics } from "@/data";
+import { mockLyrics, mockThemes } from "@/data";
 import type { Lyric } from "@/types";
 import { fuzzyIncludes, paginate, sortByOption } from "../queryUtils";
 
@@ -34,7 +34,10 @@ export function filterLyrics(params: LyricsQueryParams): Lyric[] {
         )
     );
   }
-  if (params.theme) result = result.filter((l) => l.theme.includes(params.theme!));
+  if (params.theme) {
+    const theme = mockThemes.find((item) => item.slug === params.theme);
+    result = result.filter((lyric) => theme?.lyricIds.includes(lyric.id) || lyric.theme.includes(params.theme!));
+  }
   if (params.film) result = result.filter((l) => l.film.slug === params.film);
   if (params.year) result = result.filter((l) => String(l.film.year) === params.year);
   if (params.composer) result = result.filter((l) => l.composer.some((c) => c === params.composer));

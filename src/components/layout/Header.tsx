@@ -1,16 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { uiActions } from "@/features/ui/uiSlice";
-import { NAV_LINKS, SITE_SHORT_NAME } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { MobileMenu } from "./MobileMenu";
+import { SiteBrand } from "./SiteBrand";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const dispatch = useAppDispatch();
   const mobileMenuOpen = useAppSelector((state) => state.ui.mobileMenuOpen);
+
+  const toggleMobileMenu = useCallback(() => {
+    dispatch(uiActions.setMobileMenuOpen(!mobileMenuOpen));
+  }, [dispatch, mobileMenuOpen]);
+
+  const closeMobileMenu = useCallback(() => {
+    dispatch(uiActions.setMobileMenuOpen(false));
+  }, [dispatch]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,8 +39,8 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
-          <Link href="/" className="font-serif text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-            {SITE_SHORT_NAME}
+          <Link href="/" className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+            <SiteBrand />
           </Link>
 
           <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Primary">
@@ -51,7 +60,8 @@ export function Header() {
               type="button"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
-              onClick={() => dispatch(uiActions.setMobileMenuOpen(!mobileMenuOpen))}
+              aria-controls="mobile-navigation"
+              onClick={toggleMobileMenu}
               className="rounded-full p-2 text-ink transition-colors hover:bg-paper hover:text-bronze lg:hidden"
             >
               <MenuIcon open={mobileMenuOpen} />
@@ -60,7 +70,7 @@ export function Header() {
         </div>
       </header>
 
-      <MobileMenu open={mobileMenuOpen} onClose={() => dispatch(uiActions.setMobileMenuOpen(false))} />
+      <MobileMenu open={mobileMenuOpen} onClose={closeMobileMenu} />
     </>
   );
 }

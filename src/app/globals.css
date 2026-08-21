@@ -24,6 +24,8 @@
 
   --font-serif: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-brand-sans: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-brand-script: var(--font-dancing-script), "Dancing Script", cursive;
   --font-tamil-serif: var(--font-google-sans), "Google Sans", sans-serif;
   --font-tamil-sans: var(--font-google-sans), "Google Sans", sans-serif;
 

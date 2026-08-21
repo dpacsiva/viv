@@ -10,7 +10,7 @@ import { breadcrumbSchema, collectionPageSchema } from "@/lib/jsonLd";
 export const metadata: Metadata = {
   title: "Themes — Browse Vivek's Lyrics by Theme",
   description:
-    "Explore lyricist Vivek's songs grouped by theme, including Thalapathy Vijay songs, love, Tamil pride, motivation and more.",
+    "Explore lyricist Vivek's songs grouped by theme, including Thalapathy Vijay songs, love, motivation, celebration and more.",
   alternates: { canonical: "/themes" },
 };
 
@@ -36,7 +36,7 @@ export default async function ThemesPage() {
         Every song carries a feeling. Browse Vivek&rsquo;s work through the recurring themes in his writing.
       </p>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {orderedThemes.map((theme) => (
           <ThemeCard key={theme.id} theme={theme} />
         ))}

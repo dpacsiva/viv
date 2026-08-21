@@ -39,7 +39,7 @@ export default async function ThemeDetailPage({ params }: { params: Promise<{ sl
   }
 
   const allLyrics = await fetchLyricsList({ pageSize: 100 });
-  const themeLyrics = allLyrics.items.filter((l) => l.theme.includes(theme.slug));
+  const themeLyrics = allLyrics.items.filter((lyric) => theme.lyricIds.includes(lyric.id) || lyric.theme.includes(theme.slug));
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">

@@ -8,6 +8,7 @@ export const mockThemes: Theme[] = [
     description:
       "A dedicated collection of Vivek's songs written for Thalapathy Vijay — a focused theme for the archive's first review build.",
     watercolorVariant: "vijay-flag",
+    image: "/images/themes/thalapathy-songs.webp",
     lyricIds: [],
     seo: {
       title: "Thalapathy Vijay Songs by Vivek | Lyricist Vivek",
@@ -175,12 +176,46 @@ export const mockThemes: Theme[] = [
     description:
       "Festival colour and joyous chaos — the songs written for weddings, harvests and homecomings.",
     watercolorVariant: "festival",
+    image: "/images/themes/celebration.webp",
+    imageZoom: 1.12,
     lyricIds: ["l7", "l18"],
     seo: {
       title: "Celebration Song Lyrics by Vivek | Lyricist Vivek",
       description:
         "Explore festive celebration Tamil song lyrics written by lyricist Vivek for weddings and homecomings.",
       keywords: ["Tamil celebration songs", "festival song lyrics Vivek"],
+    },
+  },
+  {
+    id: "th11",
+    slug: "popular",
+    name: "Popular",
+    description:
+      "A quick way into the songs listeners return to most — the archive's most-read lyrics, gathered in one place.",
+    watercolorVariant: "trophy",
+    image: "/images/themes/popular.webp",
+    imageZoom: 1.18,
+    lyricIds: ["l20", "l9", "l14", "l10", "l13", "l3"],
+    seo: {
+      title: "Popular Tamil Song Lyrics by Vivek | Lyricist Vivek",
+      description: "Read the most popular Tamil song lyrics written by lyricist Vivek, with transliteration and meaning.",
+      keywords: ["popular Vivek songs", "most popular Tamil lyrics", "Vivek hit songs"],
+    },
+  },
+  {
+    id: "th12",
+    slug: "others",
+    name: "Others",
+    description:
+      "More of Vivek's writing across friendship, nature, Tamil pride, motherhood, hope and longing.",
+    watercolorVariant: "page",
+    image: "/images/themes/others.webp",
+    imageZoom: 1.15,
+    lyricIds: ["l2", "l3", "l6", "l7", "l8", "l10", "l13", "l14", "l15", "l16", "l17", "l18", "l19", "l20"],
+    seo: {
+      title: "More Tamil Song Lyrics by Vivek | Lyricist Vivek",
+      description: "Explore more Tamil song lyrics by lyricist Vivek across friendship, nature, pride, hope and longing.",
+      keywords: ["Vivek Tamil lyrics", "more Vivek songs", "Tamil song themes"],
     },
   },
 ];

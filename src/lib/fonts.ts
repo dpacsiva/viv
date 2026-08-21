@@ -1,10 +1,7 @@
 import localFont from "next/font/local";
 
-// Google Sans — self-hosted from /public/fonts. This is the only font
-// family in the app: it covers both Latin and Tamil script (unlike
-// "Google Sans Flex" in the same download, which has no Tamil glyphs at
-// all), so it's used for headings, body copy, nav, and Tamil lyric text
-// alike. It's a variable font (wght 400–700, regular + italic).
+// Keep font declarations here so every component can reuse the same
+// self-hosted, optimized font instances without repeating file paths.
 export const googleSans = localFont({
   variable: "--font-google-sans",
   display: "swap",
@@ -20,4 +17,15 @@ export const googleSans = localFont({
   ],
 });
 
-export const fontVariables = googleSans.variable;
+export const dancingScript = localFont({
+  variable: "--font-dancing-script",
+  display: "swap",
+  src: [
+    {
+      path: "../../public/fonts/Google_Sans,Google_Sans_Flex/Dancing_Script,Google_Sans,Google_Sans_Flex/Dancing_Script/DancingScript-VariableFont_wght.ttf",
+      style: "normal",
+    },
+  ],
+});
+
+export const fontVariables = `${googleSans.variable} ${dancingScript.variable}`;

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV_LINKS, SITE_SHORT_NAME } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
+import { SiteBrand } from "./SiteBrand";
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
@@ -22,28 +23,30 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
   return (
     <AnimatePresence>
       {open && (
-        <>
-          <motion.div
-            className="fixed inset-0 z-50 bg-ink/30"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={onClose}
-            aria-hidden="true"
-          />
+        <motion.div
+          key="mobile-navigation"
+          className="fixed inset-0 z-50 lg:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onClick={onClose}
+        >
+          <div className="absolute inset-0 bg-ink/30" aria-hidden="true" />
           <motion.div
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
-            className="fixed inset-y-0 right-0 z-50 flex w-[85%] max-w-sm flex-col gap-1 bg-ivory p-6 shadow-2xl"
+            id="mobile-navigation"
+            className="absolute inset-y-0 right-0 flex w-[85%] max-w-sm flex-col gap-1 overflow-y-auto bg-ivory p-6 shadow-2xl"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-6 flex items-center justify-between">
-              <span className="font-serif text-xl font-semibold tracking-tight">{SITE_SHORT_NAME}</span>
+              <SiteBrand className="text-xl font-semibold tracking-tight" />
               <button
                 type="button"
                 onClick={onClose}
@@ -61,14 +64,14 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className="border-b border-border py-4 font-serif text-lg text-ink transition-colors hover:text-bronze"
+                  className="border-b border-border py-4 font-sans text-lg text-ink transition-colors hover:text-bronze"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
           </motion.div>
-        </>
+        </motion.div>
       )}
     </AnimatePresence>
   );

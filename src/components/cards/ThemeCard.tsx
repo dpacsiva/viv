@@ -16,6 +16,7 @@ export function ThemeCard({ theme }: { theme: Theme }) {
           width={640}
           height={640}
           className="h-full w-full object-cover"
+          style={theme.imageZoom ? { transform: `scale(${theme.imageZoom})` } : undefined}
           sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 45vw"
         />
       </Link>
