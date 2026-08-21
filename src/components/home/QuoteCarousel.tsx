@@ -39,9 +39,9 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
         if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
       }}
     >
-      <div className="grid lg:h-[560px] lg:grid-cols-2">
-        <div className="relative flex h-[520px] flex-col justify-center overflow-hidden px-6 py-12 sm:h-[560px] sm:px-12 lg:h-full lg:px-16 xl:px-24">
-          <span aria-hidden="true" className="absolute left-6 top-8 font-serif text-7xl leading-none text-bronze/70 sm:left-12 lg:left-16">
+      <div className="grid h-[520px] grid-cols-[1.25fr_0.75fr] sm:h-[560px] lg:grid-cols-2">
+        <div className="relative flex h-full flex-col justify-center overflow-hidden px-4 py-8 sm:px-8 sm:py-12 lg:px-16 xl:px-24">
+          <span aria-hidden="true" className="absolute left-4 top-5 font-serif text-5xl leading-none text-bronze/70 sm:left-8 sm:top-8 sm:text-7xl lg:left-16">
             “
           </span>
 
@@ -54,10 +54,10 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
                 exit={reducedMotion ? undefined : { opacity: 0, y: -16 }}
                 transition={{ duration: reducedMotion ? 0 : 0.65, ease: [0.16, 1, 0.3, 1] }}
               >
-                <blockquote lang={activeQuote.language || "ta"} className="font-serif text-2xl italic leading-[1.4] text-ivory sm:text-3xl lg:text-[1.9rem] lg:leading-[1.35]">
+                <blockquote lang={activeQuote.language || "ta"} className="font-serif text-[1.05rem] italic leading-[1.35] text-ivory sm:text-2xl lg:text-[1.9rem] lg:leading-[1.35]">
                   {activeQuote.quote}
                 </blockquote>
-                <footer className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-xs uppercase tracking-[0.22em] text-bronze sm:text-sm">
+                <footer className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[0.48rem] uppercase tracking-[0.12em] text-bronze sm:mt-8 sm:gap-x-3 sm:text-sm sm:tracking-[0.22em]">
                   <cite className="not-italic">{activeQuote.attribution}</cite>
                   {activeQuote.context && (
                     <>
@@ -70,7 +70,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
             </AnimatePresence>
           </div>
 
-          <div className="relative z-10 mt-10 flex items-center gap-2" aria-label="Choose a quote">
+          <div className="relative z-10 mt-6 flex flex-wrap items-center gap-1.5 sm:mt-10 sm:gap-2" aria-label="Choose a quote">
             {quotes.map((quote, index) => (
               <button
                 key={quote.id}
@@ -79,14 +79,14 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
                 aria-current={index === activeIndex ? "true" : undefined}
                 onClick={() => setActiveIndex(index)}
                 className={`h-1 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze ${
-                  index === activeIndex ? "w-8 bg-bronze" : "w-2 bg-ivory/30 hover:bg-ivory/60"
+                  index === activeIndex ? "w-6 bg-bronze sm:w-8" : "w-1.5 bg-ivory/30 hover:bg-ivory/60 sm:w-2"
                 }`}
               />
             ))}
           </div>
         </div>
 
-        <div className="relative h-[300px] overflow-hidden sm:h-[360px] lg:h-full">
+        <div className="relative h-full overflow-hidden">
           <Image
             src="/images/cover/cover.webp"
             alt="Vivek writing at his desk"
