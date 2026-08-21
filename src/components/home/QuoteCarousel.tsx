@@ -1,0 +1,99 @@
+"use client";
+
+import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+import type { Quote } from "@/types";
+
+export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (quotes.length < 2 || isPaused || reducedMotion) return;
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % quotes.length);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, quotes.length, reducedMotion]);
+
+  if (quotes.length === 0) return null;
+
+  const activeQuote = quotes[activeIndex] || quotes[0];
+
+  return (
+    <section
+      aria-label="Selected lyrics"
+      className="bg-ink text-ivory"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
+      }}
+    >
+      <div className="grid lg:h-[560px] lg:grid-cols-2">
+        <div className="relative flex h-[520px] flex-col justify-center overflow-hidden px-6 py-12 sm:h-[560px] sm:px-12 lg:h-full lg:px-16 xl:px-24">
+          <span aria-hidden="true" className="absolute left-6 top-8 font-serif text-7xl leading-none text-bronze/70 sm:left-12 lg:left-16">
+            “
+          </span>
+
+          <div className="relative z-10 max-w-2xl">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={activeQuote.id}
+                initial={reducedMotion ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -16 }}
+                transition={{ duration: reducedMotion ? 0 : 0.65, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <blockquote lang={activeQuote.language || "ta"} className="font-serif text-2xl italic leading-[1.4] text-ivory sm:text-3xl lg:text-[1.9rem] lg:leading-[1.35]">
+                  {activeQuote.quote}
+                </blockquote>
+                <footer className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-xs uppercase tracking-[0.22em] text-bronze sm:text-sm">
+                  <cite className="not-italic">{activeQuote.attribution}</cite>
+                  {activeQuote.context && (
+                    <>
+                      <span aria-hidden="true" className="text-ivory/35">·</span>
+                      <span className="text-ivory/55">{activeQuote.context}</span>
+                    </>
+                  )}
+                </footer>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="relative z-10 mt-10 flex items-center gap-2" aria-label="Choose a quote">
+            {quotes.map((quote, index) => (
+              <button
+                key={quote.id}
+                type="button"
+                aria-label={`Show quote ${index + 1}`}
+                aria-current={index === activeIndex ? "true" : undefined}
+                onClick={() => setActiveIndex(index)}
+                className={`h-1 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze ${
+                  index === activeIndex ? "w-8 bg-bronze" : "w-2 bg-ivory/30 hover:bg-ivory/60"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative h-[300px] overflow-hidden sm:h-[360px] lg:h-full">
+          <Image
+            src="/images/cover/cover.webp"
+            alt="Vivek writing at his desk"
+            fill
+            priority={false}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-[72%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/20 via-transparent to-transparent" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+  );
+}

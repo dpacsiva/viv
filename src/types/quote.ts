@@ -5,4 +5,5 @@ export interface Quote {
   quote: string;
   attribution: string;
   context?: string;
+  language?: "ta" | "en";
 }

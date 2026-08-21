@@ -1,33 +1,83 @@
 import type { Quote } from "@/types";
 
-/**
- * Review-build quote content. Replace or expand this small set with Vivek-approved
- * source material before the archive is published as a definitive collection.
- */
 export const mockQuotes: Quote[] = [
   {
     id: "q1",
-    quote:
-      "I don't just write for the moment. I write for the memory. If a line stays in your heart, my song has done its job.",
-    attribution: "Vivek",
-    context: "On what makes a lyric last.",
+    quote: "எந்த இடம் வலி கண்டாலும்\nகண்ணுதானே கலங்கும்\nகண்ணுபோல எங்களுக்குக்\nகாவலா நீ வரணும்",
+    attribution: "ஆளப்போறான் தமிழன்",
+    context: "மெர்சல் · 2017",
   },
   {
     id: "q2",
-    quote: "Waves keep arriving whether or not you want them to, the way memories do.",
-    attribution: "Vivek",
-    context: "On the rhythm of memory and the sea.",
+    quote: "உன் பேரைக் கேட்டா\nஉடல் உறைஞ்சே போகும்\nவிழி திரையில் பார்த்தா\nமனம் கறைஞ்சே போகும்",
+    attribution: "ஒரு பேரே வரலாறு",
+    context: "ஜன நாயகன் · 2026",
   },
   {
     id: "q3",
-    quote: "Everything else in the song was really just scaffolding around that one instruction.",
-    attribution: "Vivek",
-    context: "On finding the central line of a song.",
+    quote: "கோடி நிலவுகள் வரும் அழகே\nகோடி கவிதைகள் தரும் பொருளே\nகோடி வரமெல்லாமே ஒரு பிள்ளையானதே\nசிறு சிறு சிரிப்பெல்லாமே\nஎன்னை வாழச் சொல்லுதே",
+    attribution: "செல்ல மகளே",
+    context: "ஜன நாயகன் · 2026",
   },
   {
     id: "q4",
-    quote: "A plain sentence has nowhere to hide if it doesn't land.",
-    attribution: "Vivek",
-    context: "On the discipline of simple language.",
+    quote: "குலாவும் ஏழிசையும்\nகோடி பூ திசையும்\nஆடி நீ அசைய காண்கிறேன்\nபால் நிலா பிசையும்\nபார்வையின் வசியம்\nபாறையும் கசியும் என்கிறேன்",
+    attribution: "கோலமே",
+    context: "Penguin · 2020",
+  },
+  {
+    id: "q5",
+    quote: "உடஞ்சா மேகமே\nமா மழையைக் குடுக்குமே\nகிழிஞ்சா விதையிலே\nதான் காடு பொறக்குமே",
+    attribution: "தீ இது தளபதி",
+    context: "வாரிசு · 2022",
+  },
+  {
+    id: "q6",
+    quote: "கண்ணீரோ நீ உனக்கு சொல்லும் ஆராரோ\nகண் தூங்கி எழுந்த பின்பு நீ வேரோ",
+    attribution: "தீ இது தளபதி",
+    context: "வாரிசு · 2022",
+  },
+  {
+    id: "q7",
+    quote: "உன்னை முதலெனக் கொண்டு விரிந்திடும்\nநீட்சியை தான் உலகம்\nஉலகத்தில் உள்ள அதிசயம் எல்லாம்\nஉன்னிடமும் அடங்கும்",
+    attribution: "வா தலைவா",
+    context: "வாரிசு · 2022",
+  },
+  {
+    id: "q8",
+    quote: "இரும்பு சொகமா கைய கட்டி உக்கார்ந்தா\nஒடஞ்சி துரும்பா சில்லு சில்லா கொட்டும் பார்\nஉழைப்ப மதிச்சி கால் எடுத்து வச்சாலே\nஇளமை முழுசா உன் கூடவே ஒட்டும் பார்",
+    attribution: "சும்மா கிழி",
+    context: "தர்பார் · 2020",
+  },
+  {
+    id: "q9",
+    quote: "எத்தனை சந்தோசம்\nதினம் கொட்டுது உன் மேலே\nநீ மனசு வெச்சுபுட்டா\nரசிக்க முடியும் உன்னால\nநீ சிந்தும் கண்ணீரும்\nஇங்கு நிரந்தரம் அல்ல\nஇது புரிஞ்சிக்கிட்டாலே\nஇங்கு நீ தாண்ட ஆளு",
+    attribution: "உல்லால்லா",
+    context: "பேட்ட · 2019",
+  },
+  {
+    id: "q10",
+    quote: "கையில் கெடச்சது தொலைஞ்சா\nஇன்னும் ரொம்ப புடிச்சது கிடைக்கும்\nஆனா ஆசை அடக்கிட தெரிஞ்சா\nஇங்க எல்லாம் காலடியில் கெடக்கும்",
+    attribution: "உல்லால்லா",
+    context: "பேட்ட · 2019",
+  },
+  {
+    id: "q11",
+    quote: "காலம் எல்லாரின் மீதும்\nகல்லாகி மூடும்\nஅப்போது யார் எழுவா\nவாளே வாள் வீசும் போது\nநிற்காமல் போதும்\nநீ தானே வா ஒருவா",
+    attribution: "The One",
+    context: "Retro · 2025",
+    language: "ta",
+  },
+  {
+    id: "q12",
+    quote: "கடலால் தீராத\nஎறும்பின் தாகங்கள்\nபனித்துளி தீர்க்கும்\nதீயை நீ பகிர்ந்தாலும்\nரெண்டாய் வாழும்\nஇவனும் இந்த அந்த\nதீ போலத்தான்",
+    attribution: "நீ சிங்கம் தான்",
+    context: "பத்து தல · 2023",
+  },
+  {
+    id: "q13",
+    quote: "நீதியை கொல்கிறான்\nமௌனமாய் போகிறோம்\nஊமைகள் தேசத்தில்\nகாதையும் மூடினோம்\nமக்களின் ஆட்சியாம்\nஎன்று நாம் வாழ்கிறோம்\nபோர்களை தாண்டி தான்\nசோற்றையே காண்கிறோம்",
+    attribution: "ஒருவிரல் புரட்சியே",
+    context: "Sarkar · 2018",
   },
 ];
