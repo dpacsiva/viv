@@ -42,13 +42,23 @@ function CountUp({ value, delay, active }: { value: number; delay: number; activ
     };
   }, [active, delay, reducedMotion, value]);
 
-  return <>{(reducedMotion ? value : count).toLocaleString("en-IN")}</>;
+  return <>{(active && reducedMotion ? value : count).toLocaleString("en-IN")}</>;
 }
 
 export function ArchiveStats() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [pageReady, setPageReady] = useState(
+    () => typeof document !== "undefined" && document.documentElement.dataset.initialLoaderComplete === "true"
+  );
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const reducedMotion = useReducedMotion();
+  const isActive = pageReady && isInView;
+
+  useEffect(() => {
+    const handleLoaderComplete = () => setPageReady(true);
+    window.addEventListener("initial-loader-complete", handleLoaderComplete);
+    return () => window.removeEventListener("initial-loader-complete", handleLoaderComplete);
+  }, []);
 
   return (
     <motion.section
@@ -56,7 +66,7 @@ export function ArchiveStats() {
       aria-label="Archive highlights"
       className="border-y border-white/10 bg-ink text-ivory"
       initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
-      animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+      animate={reducedMotion || isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-white/10 px-6 py-8 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8 sm:py-10">
@@ -64,7 +74,7 @@ export function ArchiveStats() {
           <div key={stat.id} className="flex flex-col items-center justify-center px-4 py-5 text-center sm:py-2">
             <p className="font-serif text-4xl leading-none tracking-tight text-[#d4a16a] sm:text-5xl">
               <span className="tabular-nums">
-                <CountUp value={stat.value} delay={index * 140} active={isInView} />
+                <CountUp value={stat.value} delay={index * 140} active={isActive} />
               </span>
               <sup className="ml-1 text-2xl align-super sm:text-3xl">+</sup>
             </p>

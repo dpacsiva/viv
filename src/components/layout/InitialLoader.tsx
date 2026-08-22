@@ -20,7 +20,11 @@ export function InitialLoader() {
       if (dismissalScheduled) return;
       dismissalScheduled = true;
       const remaining = Math.max(0, MIN_DISPLAY_TIME - (performance.now() - startedAt));
-      dismissTimer = window.setTimeout(() => setReady(true), remaining);
+      dismissTimer = window.setTimeout(() => {
+        document.documentElement.dataset.initialLoaderComplete = "true";
+        window.dispatchEvent(new Event("initial-loader-complete"));
+        setReady(true);
+      }, remaining);
     };
 
     if (document.readyState === "complete") {
