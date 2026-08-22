@@ -18,14 +18,14 @@ export function Hero() {
       </div>
 
       {/* Desktop cover photo */}
-      <div className="relative hidden sm:block sm:aspect-[16/9] lg:aspect-[21/9]">
+      <div className="relative hidden h-[calc(100svh-16rem)] sm:block">
         <Image
           src="/images/cover/cover.webp"
           alt="Vivek writing longhand at his desk, surrounded by handwritten notebook pages"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[62%_center]"
+          className="object-cover object-[62%_35%]"
         />
       </div>
     </FadeInSection>

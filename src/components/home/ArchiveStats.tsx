@@ -56,8 +56,7 @@ export function ArchiveStats() {
       aria-label="Archive highlights"
       className="border-y border-white/10 bg-ink text-ivory"
       initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
-      whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-white/10 px-6 py-8 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8 sm:py-10">

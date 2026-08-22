@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import type { Quote } from "@/types";
 
 export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.12 });
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -26,11 +28,11 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
 
   return (
     <motion.section
+      ref={sectionRef}
       aria-label="Selected lyrics"
       className="bg-ink text-ivory"
       initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
-      whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -88,7 +90,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
 
         <div className="relative h-full overflow-hidden">
           <Image
-            src="/images/cover/cover.webp"
+            src="/images/cover/cover-of-carousel.webp"
             alt="Vivek writing at his desk"
             fill
             priority={false}

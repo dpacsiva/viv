@@ -6,6 +6,7 @@ import { MotionProvider } from "@/components/providers/MotionProvider";
 import { PageTransition } from "@/components/motion/PageTransition";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { InitialLoader } from "@/components/layout/InitialLoader";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
 import { personSchema, websiteSchema } from "@/lib/jsonLd";
 import "./globals.css";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="flex min-h-full flex-col bg-ivory text-ink">
         <SEOJsonLd data={[personSchema(), websiteSchema()]} />
         <MotionProvider>
+          <InitialLoader />
           <StoreProvider>
             <Header />
             <main id="main-content" className="flex-1">
