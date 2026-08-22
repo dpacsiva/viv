@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { fetchThemeBySlug, fetchThemesList } from "@/features/themes/themesApi";
 import { fetchLyricsList } from "@/features/lyrics/lyricsApi";
@@ -56,7 +57,25 @@ export default async function ThemeDetailPage({ params }: { params: Promise<{ sl
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Themes", href: "/themes" }, { label: theme.name }]} />
 
       <div className="mt-6 grid grid-cols-1 items-center gap-8 sm:grid-cols-[160px_1fr]">
-        <EditorialArt variant={theme.watercolorVariant} alt={`${theme.name} illustration`} className="aspect-square w-full max-w-[160px]" rounded="lg" />
+        {theme.image ? (
+          <div className="relative aspect-square w-full max-w-[160px] overflow-hidden rounded-lg">
+            <Image
+              src={theme.image}
+              alt={`${theme.name} theme illustration`}
+              fill
+              sizes="160px"
+              className="object-cover"
+              style={theme.imageZoom ? { transform: `scale(${theme.imageZoom})` } : undefined}
+            />
+          </div>
+        ) : (
+          <EditorialArt
+            variant={theme.watercolorVariant}
+            alt={`${theme.name} illustration`}
+            className="aspect-square w-full max-w-[160px]"
+            rounded="lg"
+          />
+        )}
         <div>
           <EditorialHeading as="h1" size="lg">
             {theme.name}

@@ -17,7 +17,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
 
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % quotes.length);
-    }, 3000);
+    }, 8000);
 
     return () => window.clearInterval(interval);
   }, [isPaused, quotes.length, reducedMotion]);
