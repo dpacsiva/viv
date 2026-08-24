@@ -5,9 +5,10 @@ export interface Award {
   slug: Slug;
   name: string;
   organisation: string;
-  year: number;
+  year: string;
   category: string;
   won: boolean;
+  work?: string;
   filmSlug?: string;
   lyricSlug?: string;
   citation?: string;
