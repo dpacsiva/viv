@@ -1,6 +1,27 @@
 import Link from "next/link";
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/lib/constants";
 
+function SocialIcon({ name }: { name: (typeof SOCIAL_LINKS)[number]["icon"] }) {
+  if (name === "instagram") {
+    return (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817-5.967 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-paper">
@@ -36,8 +57,10 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans text-sm text-slate transition-colors hover:text-bronze"
+                  aria-label={social.label}
+                  className="group inline-flex items-center gap-2 font-sans text-sm text-slate transition-colors hover:text-bronze"
                 >
+                  <SocialIcon name={social.icon} />
                   {social.label}
                 </a>
               </li>

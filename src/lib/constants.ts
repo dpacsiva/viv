@@ -33,10 +33,8 @@ export const FOOTER_COLUMNS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "X / Twitter", href: "https://x.com" },
-  { label: "YouTube", href: "https://youtube.com" },
-  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Instagram", href: "https://www.instagram.com/lyricist_vivek/", icon: "instagram" },
+  { label: "X / Twitter", href: "https://x.com/Lyricist_Vivek", icon: "x" },
 ] as const;
 
 export const THEME_SLUGS = [

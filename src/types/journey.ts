@@ -1,22 +1,23 @@
 export type JourneyCategory =
-  | "early-poetry"
+  | "birth"
   | "education"
-  | "engineering"
-  | "law"
-  | "entry-to-cinema"
-  | "first-film"
-  | "breakthrough"
-  | "collaboration"
-  | "important-film"
-  | "award"
+  | "influence"
+  | "poetry"
+  | "cinema"
   | "current-work";
+
+export type JourneySection = "early-life" | "literary-roots" | "cinema-journey";
 
 export interface JourneyMilestone {
   id: string;
   year: string;
+  section: JourneySection;
   category: JourneyCategory;
   title: string;
   description: string;
-  relatedFilmSlug?: string;
-  relatedLyricSlug?: string;
+  source?: string;
+  quote?: {
+    text: string;
+    attribution: string;
+  };
 }
