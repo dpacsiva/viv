@@ -40,7 +40,7 @@ export default function AboutPage() {
             nature verses — but every line, he says, is built the same way: cut down until only the necessary word
             remains.
           </p>
-          <Link href="/journey" className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-bronze hover:underline">
+          <Link href="/profile" className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-bronze hover:underline">
             Explore the Full Journey
             <span aria-hidden="true">→</span>
           </Link>

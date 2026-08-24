@@ -6,7 +6,7 @@ export const SITE_DESCRIPTION =
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Profile", href: "/journey" },
+  { label: "Profile", href: "/profile" },
   { label: "Lyrics", href: "/lyrics" },
   { label: "Other works", href: "/films" },
   { label: "Awards", href: "/awards" },
@@ -16,7 +16,7 @@ export const FOOTER_COLUMNS = [
   {
     title: "Explore",
     links: [
-      { label: "Profile", href: "/journey" },
+      { label: "Profile", href: "/profile" },
       { label: "Lyrics", href: "/lyrics" },
       { label: "Other works", href: "/films" },
       { label: "Awards", href: "/awards" },

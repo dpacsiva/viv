@@ -21,7 +21,7 @@ export function AboutVivek() {
             man who chose words to change lives.
           </p>
           <Link
-            href="/journey"
+            href="/profile"
             className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-semibold text-bronze underline-offset-4 hover:underline"
           >
             Know His Journey
