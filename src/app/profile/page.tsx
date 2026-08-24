@@ -194,7 +194,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="profile-page min-h-screen">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 pb-8 pt-0 sm:px-6 sm:py-12 lg:px-8">
         <SEOJsonLd
           data={[
             breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Profile" }]),
@@ -202,7 +202,7 @@ export default async function ProfilePage() {
           ]}
         />
         <main>
-          <section className="relative -mx-4 mt-6 overflow-hidden border-y-0 border-border bg-ivory shadow-none sm:mx-0 sm:rounded-[1.5rem] sm:border sm:shadow-[0_14px_40px_rgb(125_83_41_/0.1)]">
+          <section className="relative -mx-4 mt-0 overflow-hidden border-y-0 border-border bg-ivory shadow-none sm:mx-0 sm:mt-6 sm:rounded-[1.5rem] sm:border sm:shadow-[0_14px_40px_rgb(125_83_41_/0.1)]">
             <div className="relative grid min-h-[27rem] grid-cols-[1.05fr_0.95fr] sm:min-h-[30rem] sm:grid-cols-[0.86fr_1.14fr]">
               <div className="relative z-10 order-1 p-5 pr-2 sm:p-10 lg:p-14">
                 <SectionLabel className="text-[0.6rem] tracking-[0.12em] sm:text-xs sm:tracking-[0.2em]">Profile / Journey</SectionLabel>
@@ -248,23 +248,23 @@ export default async function ProfilePage() {
             ))}
           </dl>
 
-          <section className="relative mt-12 overflow-hidden rounded-[1.25rem] border border-border bg-[#f6efe3] shadow-sm" aria-labelledby="journey-introduction">
-            <div className="grid min-h-[18rem] grid-cols-1 lg:grid-cols-[1.12fr_0.88fr]">
-              <div className="relative z-10 p-7 pl-16 sm:p-10 sm:pl-20">
-                <span className="absolute left-5 top-2 font-sans text-8xl leading-none text-bronze/25 sm:left-8" aria-hidden="true">
+          <section className="relative mt-8 overflow-hidden rounded-[1.25rem] border border-border bg-[#f6efe3] shadow-sm lg:mt-12" aria-labelledby="journey-introduction">
+            <div className="relative grid min-h-[14rem] grid-cols-[1.35fr_0.65fr] lg:min-h-[18rem] lg:grid-cols-[1.12fr_0.88fr]">
+              <div className="relative z-10 p-5 pl-12 pr-2 sm:p-10 sm:pl-20">
+                <span className="absolute left-3 top-1 font-sans text-7xl leading-none text-bronze/25 sm:left-8 sm:text-8xl" aria-hidden="true">
                   “
                 </span>
                 <SectionLabel>His journey</SectionLabel>
-                <h2 id="journey-introduction" className="mt-3 max-w-xl font-sans text-3xl leading-tight text-ink sm:text-4xl">
+                <h2 id="journey-introduction" className="mt-2 max-w-xl font-sans text-2xl leading-tight text-ink sm:mt-3 sm:text-4xl">
                   Before the spotlight, there was the word
                 </h2>
-                <div className="mt-5 h-px w-14 bg-bronze/60" aria-hidden="true" />
-                <p className="mt-5 max-w-xl font-sans text-sm leading-relaxed text-slate sm:text-base">
+                <div className="mt-3 h-px w-10 bg-bronze/60 sm:mt-5 sm:w-14" aria-hidden="true" />
+                <p className="mt-3 max-w-xl font-sans text-[0.72rem] leading-snug text-slate sm:mt-5 sm:text-base sm:leading-relaxed">
                   Read the story as a series of connected chapters: the people and places of early life, the literary roots
                   that gave the writing its direction, and the cinema work that brought those words to a wider audience.
                 </p>
               </div>
-              <div className="relative min-h-[15rem] lg:min-h-0">
+              <div className="absolute inset-y-0 right-0 z-0 w-[45%] lg:relative lg:inset-auto lg:w-auto">
                 <Image
                   src="/images/lyricist-vivek-images/journey-introduction.webp"
                   alt="Watercolor still life of an ink bottle, feather, books and manuscript"
@@ -272,7 +272,7 @@ export default async function ProfilePage() {
                   sizes="(max-width: 1023px) 100vw, 40vw"
                   className="object-cover object-[70%_50%]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#f6efe3] via-[#f6efe3]/15 to-transparent lg:bg-gradient-to-r lg:from-[#f6efe3] lg:via-[#f6efe3]/20 lg:to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#f6efe3] via-[#f6efe3]/20 to-transparent lg:bg-gradient-to-r lg:from-[#f6efe3] lg:via-[#f6efe3]/20 lg:to-transparent" />
               </div>
             </div>
           </section>
