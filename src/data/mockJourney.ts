@@ -8,6 +8,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "birth",
     title: "The beginning of a life in words",
     description: "The Life Timeline records Vivek Velmurugan's birth on 16 April 1985.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-birth.webp",
+    imageAlt: "Watercolor illustration of a child reading a book",
     source: "Times of India birthday reference listed in the spreadsheet",
   },
   {
@@ -18,6 +20,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "School, study and a civil-engineering education",
     description:
       "Vivek studied at Vidya Mandir Higher Secondary School and later completed a B.E. in Civil Engineering at Rajalakshmi Institute of Technology. The timeline also records Ethiraj College as part of his educational journey.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-education.webp",
+    imageAlt: "Watercolor illustration of an open book with a graduation cap",
   },
   {
     id: "jm-classmate",
@@ -27,6 +31,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "A school connection rediscovered through cinema",
     description:
       "Vivek and actor Sivakarthikeyan were classmates in Class 12. They only realised the connection after meeting through work years later.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-classmates.webp",
+    imageAlt: "Watercolor illustration of two school friends",
     source: "The Hindu · 16 May 2019 · Sangeetha Kandavel",
     quote: {
       text: "Oh, so you are that Vivek!",
@@ -41,6 +47,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "A mother opened the door to poetry",
     description:
       "While helping him prepare for Tamil speech competitions, Vivek's mother introduced him to Vairamuthu's songs and poems. That early exposure became part of the literary foundation beneath his later lyrics.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-mother.webp",
+    imageAlt: "Watercolor illustration of hands opening a poetry book",
   },
   {
     id: "jm-vairamuthu-interview",
@@ -50,6 +58,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "An interview becomes an early lesson in lyric writing",
     description:
       "After the release of Alaipayuthey, Vivek remembers watching Vairamuthu speak about the difficulty of finding the right word for the song 'Snehithane'. The moment stayed with him as an early glimpse into the craft of writing for a tune.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-poetry.webp",
+    imageAlt: "Watercolor illustration of a fountain pen and ink bottle",
   },
   {
     id: "jm-thanneer-desam",
@@ -59,6 +69,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "A meeting that encouraged a young poet",
     description:
       "Vivek describes Vairamuthu's Thanneer Desam as the only Tamil book he had read completely at that stage. After meeting the poet and sharing one of his own poems, he received encouragement that he remembers as the beginning of his journey into poetry and lyrics.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-poetry.webp",
+    imageAlt: "Watercolor illustration of a fountain pen and ink bottle",
   },
   {
     id: "jm-vaa-kadavul-seivom",
@@ -68,6 +80,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "Poetry makes room for difficult conversations",
     description:
       "In a series titled Vaa, Kadavul Seivom, Vivek wrote about the transgender community, family and relationships. The work shows a poetic voice reaching beyond film narratives and into questions of dignity and belonging.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-poetry.webp",
+    imageAlt: "Watercolor illustration of a fountain pen and ink bottle",
   },
   {
     id: "jm-first-song",
@@ -77,6 +91,8 @@ export const mockJourney: JourneyMilestone[] = [
     title: "The first film song",
     description:
       "The timeline identifies Poo Avizhum Pozhudil from Enakkul Oruvan, composed by Santhosh Narayanan, as Vivek's first song for cinema.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-aalaporaan-thamizhan",
@@ -85,6 +101,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "cinema",
     title: "A first song for Thalapathy Vijay",
     description: "Aalaporaan Thamizhan marked Vivek's first song written for Thalapathy Vijay.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-pariyerum-perumal",
@@ -93,6 +111,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "cinema",
     title: "Pariyerum Perumal",
     description: "The Life Timeline records Pariyerum Perumal in Vivek's 2018 film journey.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-bigil",
@@ -101,6 +121,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "cinema",
     title: "BIGIL",
     description: "The Life Timeline records BIGIL as part of Vivek's 2019 film journey.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-tvk-anthem",
@@ -109,6 +131,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "current-work",
     title: "The TVK Flag Anthem",
     description: "The timeline records Vivek's work on the TVK Flag Anthem in 2024.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-jana-nayagan",
@@ -117,6 +141,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "current-work",
     title: "Jana Nayagan",
     description: "Jana Nayagan appears in the timeline as part of Vivek's 2026 work.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-tvk-unga-vijay",
@@ -125,6 +151,8 @@ export const mockJourney: JourneyMilestone[] = [
     category: "current-work",
     title: "TVK Unga Vijay Song",
     description: "The timeline also records the TVK Unga Vijay Song among Vivek's 2026 projects.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
   {
     id: "jm-kadaisi-nambikkai",
@@ -133,5 +161,7 @@ export const mockJourney: JourneyMilestone[] = [
     category: "current-work",
     title: "Kadaisi Nambikkai",
     description: "Kadaisi Nambikkai, described in the spreadsheet as a TVK election song, is listed among the 2026 projects.",
+    imageSrc: "/images/lyricist-vivek-images/timeline-cinema.webp",
+    imageAlt: "Watercolor illustration of film reel, microphone and musical note",
   },
 ];

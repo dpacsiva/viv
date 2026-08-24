@@ -15,6 +15,8 @@ export interface JourneyMilestone {
   category: JourneyCategory;
   title: string;
   description: string;
+  imageSrc?: string;
+  imageAlt?: string;
   source?: string;
   quote?: {
     text: string;

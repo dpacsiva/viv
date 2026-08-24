@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { fetchJourneyList } from "@/features/journey/journeyApi";
-import { EditorialHeading } from "@/components/ui/EditorialHeading";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
@@ -43,8 +42,8 @@ const PROFILE_FACTS: Array<{ label: string; value: string; icon: JourneyIconName
 
 function JourneyIcon({ name }: { name: JourneyIconName }) {
   const commonProps = {
-    width: 15,
-    height: 15,
+    width: 18,
+    height: 18,
     viewBox: "0 0 24 24",
     fill: "none",
     stroke: "currentColor",
@@ -59,7 +58,7 @@ function JourneyIcon({ name }: { name: JourneyIconName }) {
       return (
         <svg {...commonProps}>
           <rect x="3.5" y="4.5" width="17" height="16" rx="2" />
-          <path d="M7.5 2.75v3.5M16.5 2.75v3.5M3.5 9h17" />
+          <path d="M7.5 2.75v3.5M16.5 2.75v3.5M3.5 9h17M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01" />
         </svg>
       );
     case "book":
@@ -104,6 +103,8 @@ const JOURNEY_SECTIONS: Array<{
   label: string;
   title: string;
   description: string;
+  imageSrc: string;
+  imageAlt: string;
 }> = [
   {
     key: "early-life",
@@ -111,6 +112,8 @@ const JOURNEY_SECTIONS: Array<{
     title: "The places and people that shaped him",
     description:
       "Before the film credits came school, study and the relationships that gave Vivek his first sense of language, memory and belonging.",
+    imageSrc: "/images/lyricist-vivek-images/journey-early-life.webp",
+    imageAlt: "Watercolor of a school building beneath a leafy tree",
   },
   {
     key: "literary-roots",
@@ -118,6 +121,8 @@ const JOURNEY_SECTIONS: Array<{
     title: "Finding a voice in poetry",
     description:
       "Songs, books, a mother's encouragement and the example of Vairamuthu gradually turned an interest in words into a literary life.",
+    imageSrc: "/images/lyricist-vivek-images/journey-literary-roots.webp",
+    imageAlt: "Watercolor of books, an open notebook, a plant and tea",
   },
   {
     key: "cinema-journey",
@@ -125,33 +130,47 @@ const JOURNEY_SECTIONS: Array<{
     title: "From the first song to a wider stage",
     description:
       "The cinema timeline begins in 2015 and follows the songs, films and public work recorded through 2026.",
+    imageSrc: "/images/lyricist-vivek-images/journey-cinema.webp",
+    imageAlt: "Watercolor of film reel, microphone, music and screenplay",
   },
 ];
 
 function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
   return (
-    <li className="relative pb-10 pl-7 last:pb-0 sm:pl-10">
-      <span
-        className="absolute -left-[13px] top-0 flex h-6 w-6 items-center justify-center rounded-full border border-bronze bg-ivory text-bronze shadow-sm"
-        aria-hidden="true"
-      >
-        <JourneyIcon name={CATEGORY_ICONS[milestone.category]} />
+    <li className="relative pb-10 pl-10 last:pb-0 sm:pl-16">
+      <span className="absolute -left-7 top-0 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-paper bg-ivory text-bronze shadow-[0_3px_12px_rgb(125_83_41_/0.16)] ring-1 ring-bronze/25">
+        {milestone.imageSrc ? (
+          <Image
+            src={milestone.imageSrc}
+            alt={milestone.imageAlt ?? ""}
+            fill
+            sizes="56px"
+            className="object-cover"
+          />
+        ) : (
+          <span aria-hidden="true">
+            <JourneyIcon name={CATEGORY_ICONS[milestone.category]} />
+          </span>
+        )}
       </span>
+
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-bronze">{milestone.year}</span>
+        <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-bronze">
+          {milestone.year}
+        </span>
         <span className="font-sans text-xs text-slate" aria-hidden="true">
           ·
         </span>
-        <span className="font-sans text-xs uppercase tracking-[0.12em] text-slate">
+        <span className="font-sans text-[0.68rem] uppercase tracking-[0.14em] text-slate">
           {CATEGORY_LABELS[milestone.category]}
         </span>
       </div>
-      <h3 className="mt-2 font-serif text-2xl leading-tight text-ink">{milestone.title}</h3>
-      <p className="mt-3 max-w-2xl font-sans text-base leading-relaxed text-slate">{milestone.description}</p>
+      <h3 className="mt-2 font-editorial text-xl leading-tight text-ink sm:text-2xl">{milestone.title}</h3>
+      <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate sm:text-base">{milestone.description}</p>
 
       {milestone.quote && (
         <figure className="mt-5 max-w-xl border-l-2 border-bronze/60 pl-4">
-          <blockquote className="font-serif text-lg italic leading-relaxed text-ink">“{milestone.quote.text}”</blockquote>
+          <blockquote className="font-editorial text-lg italic leading-relaxed text-ink">“{milestone.quote.text}”</blockquote>
           <figcaption className="mt-2 font-sans text-xs text-slate">{milestone.quote.attribution}</figcaption>
         </figure>
       )}
@@ -161,12 +180,22 @@ function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
   );
 }
 
+function Ornament() {
+  return (
+    <div className="mt-7 flex max-w-xs items-center gap-3 text-bronze/80" aria-hidden="true">
+      <span className="h-px flex-1 bg-bronze/35" />
+      <span className="font-editorial text-lg">❧</span>
+      <span className="h-px flex-1 bg-bronze/35" />
+    </div>
+  );
+}
+
 export default async function ProfilePage() {
   const { items } = await fetchJourneyList();
 
   return (
-    <div className="bg-paper/40">
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="profile-page min-h-screen">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <SEOJsonLd
           data={[
             breadcrumbSchema([{ label: "Home", href: "/" }, { label: "Profile" }]),
@@ -175,71 +204,108 @@ export default async function ProfilePage() {
         />
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Profile" }]} />
 
-        <section className="mt-6 overflow-hidden rounded-xl border border-border bg-ivory shadow-sm">
-          <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr]">
-            <div className="relative aspect-[4/5] w-full sm:aspect-auto sm:min-h-full">
-              <Image
-                src="/images/lyricist-vivek-images/lyricist-vivek-profile.webp"
-                alt="Watercolor portrait of lyricist Vivek beside a bicycle"
-                fill
-                preload
-                sizes="(max-width: 639px) 100vw, 220px"
-                className="object-cover object-center"
-              />
+        <main>
+          <section className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-border bg-ivory shadow-[0_14px_40px_rgb(125_83_41_/0.1)]">
+            <div className="relative grid min-h-[30rem] grid-cols-1 sm:grid-cols-[0.86fr_1.14fr]">
+              <div className="relative z-10 order-1 p-6 sm:p-10 lg:p-14">
+                <SectionLabel>Profile / Journey</SectionLabel>
+                <h1 className="mt-5 max-w-md font-editorial text-5xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
+                  A life
+                  <br />
+                  written in stages
+                </h1>
+                <Ornament />
+                <p className="mt-7 max-w-md font-sans text-base leading-relaxed text-slate sm:text-lg">
+                  Vivek Velmurugan&apos;s journey moves through school, civil-engineering studies, Tamil poetry and cinema.
+                  This timeline follows the personal influences and creative work recorded in the Life Timeline.
+                </p>
+              </div>
+
+              <div className="relative order-2 min-h-[21rem] sm:absolute sm:inset-y-0 sm:right-0 sm:w-[62%]">
+                <Image
+                  src="/images/lyricist-vivek-images/lyricist-vivek-profile.webp"
+                  alt="Watercolor portrait of lyricist Vivek beside a bicycle"
+                  fill
+                  preload
+                  sizes="(max-width: 639px) 100vw, (max-width: 1024px) 62vw, 700px"
+                  className="object-cover object-center sm:object-[58%_20%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/25 to-transparent sm:bg-gradient-to-r sm:from-ivory sm:via-ivory/35 sm:to-transparent" />
+              </div>
             </div>
-            <div className="p-6 sm:p-10">
-              <SectionLabel>Profile</SectionLabel>
-              <EditorialHeading as="h1" size="lg" className="mt-2" accentLine>
-                A life written in stages
-              </EditorialHeading>
-              <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-slate">
-                Vivek Velmurugan&apos;s journey moves through school, civil-engineering studies, Tamil poetry and cinema.
-                This timeline follows the personal influences and creative work recorded in the Life Timeline.
-              </p>
+          </section>
 
-              <dl className="mt-8 grid grid-cols-1 gap-3 border-t border-border pt-6 sm:grid-cols-3">
-                {PROFILE_FACTS.map((fact) => (
-                  <div key={fact.label} className="rounded-lg border border-border bg-paper/50 p-3">
-                    <dt className="flex items-center gap-2 font-sans text-xs uppercase tracking-[0.14em] text-bronze">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-bronze/10">
-                        <JourneyIcon name={fact.icon} />
-                      </span>
-                      {fact.label}
-                    </dt>
-                    <dd className="mt-2 font-serif text-lg leading-tight text-ink">{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
+          <dl className="relative z-10 mx-3 -mt-8 grid grid-cols-3 divide-x divide-border overflow-hidden rounded-2xl border border-border bg-ivory/95 px-2 py-5 shadow-[0_10px_28px_rgb(125_83_41_/0.12)] backdrop-blur sm:mx-8 sm:px-5 sm:py-6">
+            {PROFILE_FACTS.map((fact) => (
+              <div key={fact.label} className="flex flex-col items-center gap-2 px-2 text-center sm:flex-row sm:gap-4 sm:px-5 sm:text-left">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-bronze/10 text-bronze sm:h-11 sm:w-11">
+                  <JourneyIcon name={fact.icon} />
+                </span>
+                <div>
+                  <dt className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-bronze sm:text-xs">
+                    {fact.label}
+                  </dt>
+                  <dd className="mt-1 font-editorial text-sm leading-tight text-ink sm:text-lg">{fact.value}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
+
+          <section className="relative mt-12 overflow-hidden rounded-[1.25rem] border border-border bg-[#f6efe3] shadow-sm" aria-labelledby="journey-introduction">
+            <div className="grid min-h-[18rem] grid-cols-1 lg:grid-cols-[1.12fr_0.88fr]">
+              <div className="relative z-10 p-7 pl-16 sm:p-10 sm:pl-20">
+                <span className="absolute left-5 top-2 font-editorial text-8xl leading-none text-bronze/25 sm:left-8" aria-hidden="true">
+                  “
+                </span>
+                <SectionLabel>His journey</SectionLabel>
+                <h2 id="journey-introduction" className="mt-3 max-w-xl font-editorial text-3xl leading-tight text-ink sm:text-4xl">
+                  Before the spotlight, there was the word
+                </h2>
+                <div className="mt-5 h-px w-14 bg-bronze/60" aria-hidden="true" />
+                <p className="mt-5 max-w-xl font-sans text-sm leading-relaxed text-slate sm:text-base">
+                  Read the story as a series of connected chapters: the people and places of early life, the literary roots
+                  that gave the writing its direction, and the cinema work that brought those words to a wider audience.
+                </p>
+              </div>
+              <div className="relative min-h-[15rem] lg:min-h-0">
+                <Image
+                  src="/images/lyricist-vivek-images/journey-introduction.webp"
+                  alt="Watercolor still life of an ink bottle, feather, books and manuscript"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 40vw"
+                  className="object-cover object-[70%_50%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#f6efe3] via-[#f6efe3]/15 to-transparent lg:bg-gradient-to-r lg:from-[#f6efe3] lg:via-[#f6efe3]/20 lg:to-transparent" />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="mt-16 border-t border-border pt-10" aria-label="Journey chapters">
-          <SectionLabel>His journey</SectionLabel>
-          <EditorialHeading as="h2" size="md" className="mt-2" accentLine>
-            Before the spotlight, there was the word
-          </EditorialHeading>
-          <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-slate">
-            Read the story as a series of connected chapters: the people and places of early life, the literary roots
-            that gave the writing its direction, and the cinema work that brought those words to a wider audience.
-          </p>
-
-          <div className="mt-12 flex flex-col gap-16">
+          <div className="mt-12 flex flex-col gap-14">
             {JOURNEY_SECTIONS.map((section) => {
               const sectionItems = items.filter((item) => item.section === section.key);
 
               return (
                 <section key={section.key} aria-labelledby={`${section.key}-heading`}>
-                  <div className="grid grid-cols-1 gap-6 lg:grid-cols-[220px_1fr] lg:gap-12">
-                    <div>
-                      <SectionLabel>{section.label}</SectionLabel>
-                      <h2 id={`${section.key}-heading`} className="mt-2 font-serif text-2xl leading-tight text-ink">
-                        {section.title}
-                      </h2>
-                      <p className="mt-3 font-sans text-sm leading-relaxed text-slate">{section.description}</p>
-                    </div>
+                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[15rem_1fr] lg:gap-12">
+                    <aside className="relative min-h-[20rem] overflow-hidden rounded-2xl border border-border bg-beige shadow-sm">
+                      <Image
+                        src={section.imageSrc}
+                        alt={section.imageAlt}
+                        fill
+                        sizes="(max-width: 1023px) 100vw, 240px"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/70 to-paper/10" />
+                      <div className="relative z-10 flex min-h-[20rem] flex-col justify-end p-6">
+                        <SectionLabel>{section.label}</SectionLabel>
+                        <h2 id={`${section.key}-heading`} className="mt-3 font-editorial text-2xl leading-tight text-ink">
+                          {section.title}
+                        </h2>
+                        <p className="mt-3 font-sans text-sm leading-relaxed text-slate">{section.description}</p>
+                      </div>
+                    </aside>
 
-                    <ol className="flex flex-col border-l border-border">
+                    <ol className="relative flex flex-col border-l border-bronze/45 py-1 lg:ml-4">
                       {sectionItems.map((milestone) => (
                         <JourneyEntry key={milestone.id} milestone={milestone} />
                       ))}
@@ -249,7 +315,7 @@ export default async function ProfilePage() {
               );
             })}
           </div>
-        </section>
+        </main>
       </div>
     </div>
   );
