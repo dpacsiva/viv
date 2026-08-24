@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { fetchJourneyList } from "@/features/journey/journeyApi";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
 import { breadcrumbSchema, personSchema } from "@/lib/jsonLd";
 import type { JourneyCategory, JourneyMilestone, JourneySection } from "@/types";
@@ -165,12 +164,12 @@ function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
           {CATEGORY_LABELS[milestone.category]}
         </span>
       </div>
-      <h3 className="mt-2 font-editorial text-xl leading-tight text-ink sm:text-2xl">{milestone.title}</h3>
+      <h3 className="mt-2 font-sans text-xl leading-tight text-ink sm:text-2xl">{milestone.title}</h3>
       <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate sm:text-base">{milestone.description}</p>
 
       {milestone.quote && (
         <figure className="mt-5 max-w-xl border-l-2 border-bronze/60 pl-4">
-          <blockquote className="font-editorial text-lg italic leading-relaxed text-ink">“{milestone.quote.text}”</blockquote>
+          <blockquote className="font-sans text-lg italic leading-relaxed text-ink">“{milestone.quote.text}”</blockquote>
           <figcaption className="mt-2 font-sans text-xs text-slate">{milestone.quote.attribution}</figcaption>
         </figure>
       )}
@@ -184,7 +183,7 @@ function Ornament() {
   return (
     <div className="mt-7 flex max-w-xs items-center gap-3 text-bronze/80" aria-hidden="true">
       <span className="h-px flex-1 bg-bronze/35" />
-      <span className="font-editorial text-lg">❧</span>
+      <span className="font-sans text-lg">❧</span>
       <span className="h-px flex-1 bg-bronze/35" />
     </div>
   );
@@ -202,26 +201,24 @@ export default async function ProfilePage() {
             personSchema(),
           ]}
         />
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Profile" }]} />
-
         <main>
-          <section className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-border bg-ivory shadow-[0_14px_40px_rgb(125_83_41_/0.1)]">
-            <div className="relative grid min-h-[30rem] grid-cols-1 sm:grid-cols-[0.86fr_1.14fr]">
-              <div className="relative z-10 order-1 p-6 sm:p-10 lg:p-14">
-                <SectionLabel>Profile / Journey</SectionLabel>
-                <h1 className="mt-5 max-w-md font-editorial text-5xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
+          <section className="relative -mx-4 mt-6 overflow-hidden border-y-0 border-border bg-ivory shadow-none sm:mx-0 sm:rounded-[1.5rem] sm:border sm:shadow-[0_14px_40px_rgb(125_83_41_/0.1)]">
+            <div className="relative grid min-h-[27rem] grid-cols-[1.05fr_0.95fr] sm:min-h-[30rem] sm:grid-cols-[0.86fr_1.14fr]">
+              <div className="relative z-10 order-1 p-5 pr-2 sm:p-10 lg:p-14">
+                <SectionLabel className="text-[0.6rem] tracking-[0.12em] sm:text-xs sm:tracking-[0.2em]">Profile / Journey</SectionLabel>
+                <h1 className="mt-4 max-w-md font-sans text-4xl leading-[0.98] text-ink sm:mt-5 sm:text-6xl lg:text-7xl">
                   A life
                   <br />
                   written in stages
                 </h1>
                 <Ornament />
-                <p className="mt-7 max-w-md font-sans text-base leading-relaxed text-slate sm:text-lg">
+                <p className="mt-5 max-w-md font-sans text-[0.82rem] leading-relaxed text-slate sm:mt-7 sm:text-lg">
                   Vivek Velmurugan&apos;s journey moves through school, civil-engineering studies, Tamil poetry and cinema.
                   This timeline follows the personal influences and creative work recorded in the Life Timeline.
                 </p>
               </div>
 
-              <div className="relative order-2 min-h-[21rem] sm:absolute sm:inset-y-0 sm:right-0 sm:w-[62%]">
+              <div className="absolute inset-y-0 right-0 z-0 order-2 w-[52%] sm:w-[62%]">
                 <Image
                   src="/images/lyricist-vivek-images/lyricist-vivek-profile.webp"
                   alt="Watercolor portrait of lyricist Vivek beside a bicycle"
@@ -230,7 +227,7 @@ export default async function ProfilePage() {
                   sizes="(max-width: 639px) 100vw, (max-width: 1024px) 62vw, 700px"
                   className="object-cover object-center sm:object-[58%_20%]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/25 to-transparent sm:bg-gradient-to-r sm:from-ivory sm:via-ivory/35 sm:to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/25 to-transparent" />
               </div>
             </div>
           </section>
@@ -245,7 +242,7 @@ export default async function ProfilePage() {
                   <dt className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-bronze sm:text-xs">
                     {fact.label}
                   </dt>
-                  <dd className="mt-1 font-editorial text-sm leading-tight text-ink sm:text-lg">{fact.value}</dd>
+                  <dd className="mt-1 font-sans text-sm leading-tight text-ink sm:text-lg">{fact.value}</dd>
                 </div>
               </div>
             ))}
@@ -254,11 +251,11 @@ export default async function ProfilePage() {
           <section className="relative mt-12 overflow-hidden rounded-[1.25rem] border border-border bg-[#f6efe3] shadow-sm" aria-labelledby="journey-introduction">
             <div className="grid min-h-[18rem] grid-cols-1 lg:grid-cols-[1.12fr_0.88fr]">
               <div className="relative z-10 p-7 pl-16 sm:p-10 sm:pl-20">
-                <span className="absolute left-5 top-2 font-editorial text-8xl leading-none text-bronze/25 sm:left-8" aria-hidden="true">
+                <span className="absolute left-5 top-2 font-sans text-8xl leading-none text-bronze/25 sm:left-8" aria-hidden="true">
                   “
                 </span>
                 <SectionLabel>His journey</SectionLabel>
-                <h2 id="journey-introduction" className="mt-3 max-w-xl font-editorial text-3xl leading-tight text-ink sm:text-4xl">
+                <h2 id="journey-introduction" className="mt-3 max-w-xl font-sans text-3xl leading-tight text-ink sm:text-4xl">
                   Before the spotlight, there was the word
                 </h2>
                 <div className="mt-5 h-px w-14 bg-bronze/60" aria-hidden="true" />
@@ -280,13 +277,14 @@ export default async function ProfilePage() {
             </div>
           </section>
 
-          <div className="mt-12 flex flex-col gap-14">
-            {JOURNEY_SECTIONS.map((section) => {
-              const sectionItems = items.filter((item) => item.section === section.key);
+          <div className="relative mt-12">
+            <div className="flex flex-col gap-14">
+              {JOURNEY_SECTIONS.map((section) => {
+                const sectionItems = items.filter((item) => item.section === section.key);
 
-              return (
-                <section key={section.key} aria-labelledby={`${section.key}-heading`}>
-                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[15rem_1fr] lg:gap-12">
+                return (
+                  <section key={section.key} aria-labelledby={`${section.key}-heading`}>
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[15rem_1fr] lg:gap-12">
                     <aside className="relative min-h-[20rem] overflow-hidden rounded-2xl border border-border bg-beige shadow-sm">
                       <Image
                         src={section.imageSrc}
@@ -298,22 +296,23 @@ export default async function ProfilePage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/70 to-paper/10" />
                       <div className="relative z-10 flex min-h-[20rem] flex-col justify-end p-6">
                         <SectionLabel>{section.label}</SectionLabel>
-                        <h2 id={`${section.key}-heading`} className="mt-3 font-editorial text-2xl leading-tight text-ink">
+                        <h2 id={`${section.key}-heading`} className="mt-3 font-sans text-2xl leading-tight text-ink">
                           {section.title}
                         </h2>
                         <p className="mt-3 font-sans text-sm leading-relaxed text-slate">{section.description}</p>
                       </div>
                     </aside>
 
-                    <ol className="relative flex flex-col border-l border-bronze/45 py-1 lg:ml-4">
+                    <ol className="relative -mt-8 ml-7 flex flex-col border-l border-bronze/45 pb-1 pl-0 pt-8 lg:ml-4 lg:mt-0 lg:border-l lg:pt-1">
                       {sectionItems.map((milestone) => (
                         <JourneyEntry key={milestone.id} milestone={milestone} />
                       ))}
                     </ol>
-                  </div>
-                </section>
-              );
-            })}
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
           </div>
         </main>
       </div>
