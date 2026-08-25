@@ -13,6 +13,7 @@ export interface JourneyMilestone {
   year: string;
   section: JourneySection;
   category: JourneyCategory;
+  displayCategory?: string;
   title: string;
   description: string;
   imageSrc?: string;

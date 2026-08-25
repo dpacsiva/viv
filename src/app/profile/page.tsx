@@ -35,7 +35,7 @@ const CATEGORY_ICONS: Record<JourneyCategory, JourneyIconName> = {
 
 const PROFILE_FACTS: Array<{ label: string; value: string; icon: JourneyIconName }> = [
   { label: "Born", value: "16 April 1985", icon: "calendar" },
-  { label: "Education", value: "B.E. Civil Engineering", icon: "book" },
+  { label: "Education", value: "B.E. Civil Engineering · Law School", icon: "book" },
   { label: "First film song", value: "2015", icon: "film" },
 ];
 
@@ -161,11 +161,13 @@ function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
           ·
         </span>
         <span className="font-sans text-[0.68rem] uppercase tracking-[0.14em] text-slate">
-          {CATEGORY_LABELS[milestone.category]}
+          {milestone.displayCategory ?? CATEGORY_LABELS[milestone.category]}
         </span>
       </div>
       <h3 className="mt-2 font-sans text-xl leading-tight text-ink sm:text-2xl">{milestone.title}</h3>
-      <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate sm:text-base">{milestone.description}</p>
+      <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate sm:text-base">
+        {cleanJourneyDescription(milestone.description)}
+      </p>
 
       {milestone.quote && (
         <figure className="mt-5 max-w-xl border-l-2 border-bronze/60 pl-4">
@@ -177,6 +179,15 @@ function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
       {milestone.source && <p className="mt-4 font-sans text-xs text-slate">Source: {milestone.source}</p>}
     </li>
   );
+}
+
+function cleanJourneyDescription(description: string) {
+  return description
+    .replace(/^The Life Timeline records /, "")
+    .replace(/^The timeline records /, "")
+    .replace(/^The timeline also records /, "")
+    .replace(/^The timeline identifies /, "")
+    .replace(/^Jana Nayagan appears in the timeline as part of /, "Jana Nayagan is part of ");
 }
 
 function Ornament() {
@@ -213,8 +224,8 @@ export default async function ProfilePage() {
                 </h1>
                 <Ornament />
                 <p className="mt-5 max-w-md font-sans text-[0.82rem] leading-relaxed text-slate sm:mt-7 sm:text-lg">
-                  Vivek Velmurugan&apos;s journey moves through school, civil-engineering studies, Tamil poetry and cinema.
-                  This timeline follows the personal influences and creative work recorded in the Life Timeline.
+                  Vivek Velmurugan&apos;s journey moves through school, civil-engineering studies, law school, Tamil poetry and cinema.
+                  This page follows the personal influences and creative work behind his journey.
                 </p>
               </div>
 

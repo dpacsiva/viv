@@ -7,7 +7,7 @@ import { fetchThemesList } from "@/features/themes/themesApi";
 const STATIC_ROUTES = [
   "",
   "/lyrics",
-  "/films",
+  "/other-works",
   "/profile",
   "/themes",
   "/awards",

@@ -8,7 +8,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Profile", href: "/profile" },
   { label: "Lyrics", href: "/lyrics" },
-  { label: "Other works", href: "/films" },
+  { label: "Other works", href: "/other-works" },
   { label: "Awards", href: "/awards" },
 ] as const;
 
@@ -18,7 +18,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "Profile", href: "/profile" },
       { label: "Lyrics", href: "/lyrics" },
-      { label: "Other works", href: "/films" },
+      { label: "Other works", href: "/other-works" },
       { label: "Awards", href: "/awards" },
       { label: "Quotes", href: "/quotes" },
     ],

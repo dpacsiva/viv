@@ -49,13 +49,13 @@ export default async function FilmDetailPage({ params }: { params: Promise<{ slu
         data={[
           breadcrumbSchema([
             { label: "Home", href: "/" },
-            { label: "Other works", href: "/films" },
+            { label: "Other works", href: "/other-works" },
             { label: film.name },
           ]),
           filmSchema(film),
         ]}
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Other works", href: "/films" }, { label: film.name }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Other works", href: "/other-works" }, { label: film.name }]} />
 
       <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-[200px_1fr]">
         <EditorialArt
