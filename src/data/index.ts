@@ -7,6 +7,7 @@ export { mockJournal } from "./mockJournal";
 export { mockAwards } from "./mockAwards";
 export { mockJourney } from "./mockJourney";
 export { mockQuotes } from "./mockQuotes";
+export { LYRICS_FILM_ARTWORK, filmArtwork } from "./lyricsFilmArtwork";
 export {
   LYRICS_FILMS,
   LYRICS_MASTER_MOVIES,

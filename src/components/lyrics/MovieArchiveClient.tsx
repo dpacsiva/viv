@@ -24,15 +24,15 @@ export function MovieArchiveClient({
   const years = yearsInCatalog();
 
   return (
-    <div className="profile-page -mx-4 min-h-screen px-4 pb-20 pt-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div className="lyrics-archive-page min-h-screen px-4 pb-20 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl pt-7 sm:pt-12">
         <div className="flex flex-col gap-5 border-b border-bronze/15 pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div className="flex items-center gap-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-bronze">
+            <div className="hidden items-center gap-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-bronze sm:flex">
               <span className="h-px w-8 bg-bronze" />
               The movie index
             </div>
-            <h1 className="mt-5 font-sans text-4xl font-semibold tracking-[-0.05em] text-ink sm:text-6xl">Browse by movie</h1>
+            <h1 className="mt-0 font-sans text-5xl font-semibold tracking-[-0.045em] text-ink sm:mt-5 sm:text-7xl">Browse by movie</h1>
             <p className="mt-4 max-w-2xl font-sans text-base leading-7 text-slate">
               Choose a film to see its songs in sequence. The listed count and the imported song rows are shown separately wherever the two spreadsheet tabs differ.
             </p>

@@ -26,7 +26,7 @@ export function MovieSongsClient({
   }, [songs, query]);
 
   return (
-    <div className="profile-page -mx-4 min-h-screen px-4 pb-20 pt-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div className="lyrics-archive-page min-h-screen px-4 pb-20 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl pt-7 sm:pt-12">
         <div className="flex flex-col gap-7 border-b border-bronze/15 pb-9 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -34,7 +34,7 @@ export function MovieSongsClient({
               <span className="h-px w-8 bg-bronze" />
               {movie.kind === "film" ? "Film songs" : "Special releases"}
             </div>
-            <h1 className="mt-5 font-sans text-4xl font-semibold tracking-[-0.05em] text-ink sm:text-6xl">{movieName(movie, language)}</h1>
+            <h1 className="mt-5 font-sans text-5xl font-semibold tracking-[-0.045em] text-ink sm:text-7xl">{movieName(movie, language)}</h1>
             {language === "tamil" && movie.tamilName && movie.tamilName !== movie.name && <p className="mt-2 font-sans text-base text-slate">{movie.name}</p>}
             <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-sm text-slate">
               <span>{movie.year}</span><span aria-hidden="true">·</span><span>{movieCountLabel(movie)}</span>

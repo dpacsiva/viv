@@ -3,11 +3,13 @@ export type LyricsArchiveIconName =
   | "book"
   | "chevron"
   | "film"
+  | "feather"
   | "globe"
   | "list"
   | "music"
   | "search"
-  | "spark";
+  | "spark"
+  | "star";
 
 export function LyricsArchiveIcon({
   name,
@@ -59,6 +61,13 @@ export function LyricsArchiveIcon({
           <path d="M8 5v14M16 5v14M3.5 9.5H8M16 9.5h4.5M3.5 14.5H8M16 14.5h4.5" />
         </svg>
       );
+    case "feather":
+      return (
+        <svg {...commonProps}>
+          <path d="M19.5 4.5C14 3.4 7.1 6.1 5.2 12.2c-1 3.2.4 5.8.4 5.8s2.7 1.4 5.8.4c6.1-1.9 8.8-8.8 8.1-14.3Z" />
+          <path d="M4.5 20 13 11.5M8.5 15.5l-.2-3.1M12 12l3.2.2M15.5 8.5l-.1 3" />
+        </svg>
+      );
     case "globe":
       return (
         <svg {...commonProps}>
@@ -92,6 +101,12 @@ export function LyricsArchiveIcon({
       return (
         <svg {...commonProps}>
           <path d="m12 3 1.35 5.65L19 10l-5.65 1.35L12 17l-1.35-5.65L5 10l5.65-1.35zM19 16l.65 2.35L22 19l-2.35.65L19 22l-.65-2.35L16 19l2.35-.65z" />
+        </svg>
+      );
+    case "star":
+      return (
+        <svg {...commonProps}>
+          <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.9z" />
         </svg>
       );
   }
