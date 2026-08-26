@@ -63,8 +63,9 @@ export function ArchiveStats() {
   return (
     <motion.section
       ref={sectionRef}
+      id="archive-highlights"
       aria-label="Archive highlights"
-      className="border-y border-white/10 bg-ink text-ivory"
+      className="scroll-mt-20 border-y border-white/10 bg-ink text-ivory"
       initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
       animate={reducedMotion || isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}

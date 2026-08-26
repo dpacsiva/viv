@@ -62,6 +62,15 @@
   to { transform: translateX(100%); }
 }
 
+@keyframes home-scroll-cue {
+  0%, 100% { opacity: 0.55; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(0.55rem); }
+}
+
+.home-scroll-cue-dot {
+  animation: home-scroll-cue 1.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -71,6 +80,10 @@
   }
 
   .skeleton-shimmer::after {
+    animation: none;
+  }
+
+  .home-scroll-cue-dot {
     animation: none;
   }
 }
