@@ -11,7 +11,7 @@ export function ExploreThemes({ themes }: { themes: Theme[] }) {
       </div>
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {themes.map((theme) => (
-          <ThemeCard key={theme.id} theme={theme} />
+          <ThemeCard key={theme.id} theme={theme} href="/lyrics/coming-soon" />
         ))}
       </div>
     </FadeInSection>

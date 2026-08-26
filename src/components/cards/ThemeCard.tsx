@@ -3,11 +3,11 @@ import Link from "next/link";
 import { EditorialArt } from "@/components/media/EditorialArt";
 import type { Theme } from "@/types";
 
-export function ThemeCard({ theme }: { theme: Theme }) {
+export function ThemeCard({ theme, href = `/themes/${theme.slug}` }: { theme: Theme; href?: string }) {
   if (theme.image) {
     return (
       <Link
-        href={`/themes/${theme.slug}`}
+        href={href}
         className="group block aspect-square w-full overflow-hidden rounded-2xl shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
       >
         <Image
@@ -25,7 +25,7 @@ export function ThemeCard({ theme }: { theme: Theme }) {
 
   return (
     <Link
-      href={`/themes/${theme.slug}`}
+      href={href}
       className="group flex flex-col items-center gap-3 rounded-xl border border-border bg-white p-4 text-center transition-shadow hover:shadow-md"
     >
       <EditorialArt

@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { PageLoadingSkeleton } from "@/components/states/PageLoadingSkeleton";
 
@@ -11,6 +11,8 @@ const getServerHydrationSnapshot = () => false;
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const routeKey = `${pathname}?${searchParams.toString()}`;
   const reducedMotion = useReducedMotion();
   const [isNavigating, setIsNavigating] = useState(false);
   const hasMounted = useSyncExternalStore(
@@ -23,7 +25,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setIsNavigating(false));
     return () => window.cancelAnimationFrame(frame);
-  }, [pathname]);
+  }, [routeKey]);
 
   useEffect(() => {
     const handleNavigationStart = (event: MouseEvent) => {
@@ -68,7 +70,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         </motion.div>
       ) : (
         <motion.div
-          key={pathname}
+          key={routeKey}
           className="min-h-full"
           initial={shouldAnimate ? { opacity: 0, filter: "blur(4px)", scale: 0.99 } : false}
           animate={shouldAnimate ? { opacity: 1, filter: "blur(0px)", scale: 1 } : undefined}

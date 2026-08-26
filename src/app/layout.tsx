@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { fontVariables } from "@/lib/fonts";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { StoreProvider } from "@/components/providers/StoreProvider";
@@ -46,7 +47,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <StoreProvider>
             <Header />
             <main id="main-content" className="flex-1">
-              <PageTransition>{children}</PageTransition>
+              <Suspense fallback={<div className="min-h-full">{children}</div>}>
+                <PageTransition>{children}</PageTransition>
+              </Suspense>
             </main>
             <Footer />
           </StoreProvider>

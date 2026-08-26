@@ -176,7 +176,9 @@ function JourneyEntry({ milestone }: { milestone: JourneyMilestone }) {
         </figure>
       )}
 
-      {milestone.source && <p className="mt-4 font-sans text-xs text-slate">Source: {milestone.source}</p>}
+      {milestone.source && !milestone.source.includes("Times of India birthday reference") && (
+        <p className="mt-4 font-sans text-xs text-slate">Source: {milestone.source}</p>
+      )}
     </li>
   );
 }
