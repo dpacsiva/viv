@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
-import { fetchLyricsList } from "@/features/lyrics/lyricsApi";
 import { fetchFilmsList } from "@/features/films/filmsApi";
 import { fetchThemesList } from "@/features/themes/themesApi";
+import { LYRICS_MASTER_MOVIES } from "@/data/lyricsCatalog";
 
 const STATIC_ROUTES = [
   "",
   "/lyrics",
+  "/lyrics/movies",
   "/other-works",
   "/profile",
   "/themes",
@@ -32,12 +33,11 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
   }
 
   if (id === 1) {
-    const { items } = await fetchLyricsList({ pageSize: 100 });
-    return items.map((lyric) => ({
-      url: `${SITE_URL}/lyrics/${lyric.slug}`,
-      lastModified: lyric.publishedAt,
+    return LYRICS_MASTER_MOVIES.map((movie) => ({
+      url: `${SITE_URL}/lyrics/movies/${movie.slug}`,
+      lastModified: `${movie.year}-12-31`,
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: 0.8,
     }));
   }
 
@@ -47,7 +47,7 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
       url: `${SITE_URL}/films/${film.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.7,
     }));
   }
 

@@ -10,3 +10,4 @@ export * from "./journey";
 export * from "./search";
 export * from "./home";
 export * from "./quote";
+export * from "./lyricsMaster";
