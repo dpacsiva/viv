@@ -23,6 +23,12 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const shouldAnimate = hasMounted && !reducedMotion;
 
   useEffect(() => {
+    const documentElement = document.documentElement;
+    const previousScrollBehavior = documentElement.style.scrollBehavior;
+    documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    documentElement.style.scrollBehavior = previousScrollBehavior;
+
     const frame = window.requestAnimationFrame(() => setIsNavigating(false));
     return () => window.cancelAnimationFrame(frame);
   }, [routeKey]);
