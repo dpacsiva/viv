@@ -5,6 +5,25 @@ import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-mot
 import { useEffect, useRef, useState } from "react";
 import type { Quote } from "@/types";
 
+function ArrowIcon({ direction }: { direction: "left" | "right" }) {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={direction === "left" ? "rotate-180" : undefined}
+      aria-hidden="true"
+    >
+      <path d="m9 5 7 7-7 7" />
+    </svg>
+  );
+}
+
 export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -30,7 +49,7 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
     <motion.section
       ref={sectionRef}
       aria-label="Selected lyrics"
-      className="bg-ink text-ivory"
+      className="relative bg-ink text-ivory"
       initial={reducedMotion ? undefined : { opacity: 0, y: 18 }}
       animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
       transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
@@ -41,8 +60,29 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
         if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
       }}
     >
+      {quotes.length > 1 && (
+        <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-6 lg:px-10" aria-label="Quote navigation">
+          <button
+            type="button"
+            aria-label="Previous quote"
+            onClick={() => setActiveIndex((current) => (current - 1 + quotes.length) % quotes.length)}
+            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-ivory/35 bg-ink/35 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-11 sm:w-11"
+          >
+            <ArrowIcon direction="left" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next quote"
+            onClick={() => setActiveIndex((current) => (current + 1) % quotes.length)}
+            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-ivory/35 bg-ink/35 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-11 sm:w-11"
+          >
+            <ArrowIcon direction="right" />
+          </button>
+        </div>
+      )}
+
       <div className="grid h-[520px] grid-cols-[1.25fr_0.75fr] sm:h-[560px] lg:grid-cols-2">
-        <div className="relative flex h-full flex-col justify-center overflow-hidden px-4 py-8 sm:px-8 sm:py-12 lg:px-16 xl:px-24">
+        <div className="relative flex h-full flex-col justify-center overflow-hidden px-12 py-8 sm:px-16 sm:py-12 lg:px-20 xl:px-24">
           <span aria-hidden="true" className="absolute left-4 top-5 font-serif text-5xl leading-none text-bronze/70 sm:left-8 sm:top-8 sm:text-7xl lg:left-16">
             “
           </span>

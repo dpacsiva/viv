@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { LyricsHomeClient } from "@/components/lyrics/LyricsHomeClient";
 import { SEOJsonLd } from "@/components/seo/SEOJsonLd";
+import { fetchThemesList } from "@/features/themes/themesApi";
+import { THEME_SLUGS } from "@/lib/constants";
 import { LYRICS_MASTER_MOVIES, LYRICS_MASTER_SONGS } from "@/data/lyricsCatalog";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/jsonLd";
 import type { LyricsLanguage } from "@/types/lyricsMaster";
@@ -23,6 +25,10 @@ export default async function LyricsArchivePage({
   searchParams: Promise<{ view?: string | string[]; lang?: string | string[] }>;
 }) {
   const params = await searchParams;
+  const { items: themeItems } = await fetchThemesList();
+  const themes = THEME_SLUGS.map((slug) => themeItems.find((theme) => theme.slug === slug)).filter(
+    (theme): theme is NonNullable<typeof theme> => Boolean(theme)
+  );
   const initialLanguage: LyricsLanguage = readParam(params.lang) === "tamil" ? "tamil" : "english";
   const initialView = readParam(params.view) === "songs" ? "songs" : "movies";
 
@@ -41,6 +47,7 @@ export default async function LyricsArchivePage({
       <LyricsHomeClient
         movies={[...LYRICS_MASTER_MOVIES]}
         songs={[...LYRICS_MASTER_SONGS]}
+        themes={themes}
         initialLanguage={initialLanguage}
         initialView={initialView}
       />

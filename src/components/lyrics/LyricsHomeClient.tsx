@@ -6,17 +6,21 @@ import { LyricsArchiveIcon, type LyricsArchiveIconName } from "./LyricsArchiveIc
 import { LyricsLanguageToggle } from "./LyricsLanguageToggle";
 import { MasterMovieCard } from "./MasterMovieCard";
 import { MasterSongRow } from "./MasterSongRow";
+import { ThemeCard } from "@/components/cards/ThemeCard";
 import { includesQuery, movieHasQuery, sortByLatest } from "@/data/lyricsCatalog";
+import type { Theme } from "@/types";
 import type { LyricsLanguage, LyricsMasterMovie, LyricsMasterSong } from "@/types/lyricsMaster";
 
 export function LyricsHomeClient({
   movies,
   songs,
+  themes,
   initialLanguage,
   initialView,
 }: {
   movies: LyricsMasterMovie[];
   songs: LyricsMasterSong[];
+  themes: Theme[];
   initialLanguage: LyricsLanguage;
   initialView: "movies" | "songs";
 }) {
@@ -66,28 +70,22 @@ export function LyricsHomeClient({
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-bronze/25 bg-white/60 p-6 shadow-[0_16px_45px_rgb(125_83_41_/0.07)] sm:p-9">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-bronze/25 bg-white/60 p-4 shadow-[0_16px_45px_rgb(125_83_41_/0.07)] sm:p-6">
             <div className="absolute -right-12 -top-16 h-48 w-48 rounded-full border border-bronze/15" />
             <div className="absolute -bottom-20 -right-2 h-48 w-48 rounded-full border border-bronze/10" />
-            <div className="relative flex items-start justify-between gap-5">
+            <div className="relative flex items-center justify-between gap-4">
               <span className="flex h-14 w-14 items-center justify-center rounded-full border border-bronze/20 bg-paper text-bronze">
                 <LyricsArchiveIcon name="feather" size={28} />
               </span>
-              <LyricsArchiveIcon name="spark" size={32} className="text-bronze/45" />
+              <div className="text-right">
+                <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-bronze">Explore Lyrics</p>
+                <p className="mt-1 font-sans text-sm text-slate">Browse by feeling and story.</p>
+              </div>
             </div>
-            <h2 className="relative mt-8 max-w-xs font-sans text-3xl font-semibold leading-tight text-bronze sm:text-4xl">
-              Lyrics that stay.<br />Stories that live.
-            </h2>
-            <div className="relative mt-5 flex items-center gap-3">
-              <span className="h-px w-20 bg-bronze/45" />
-              <span className="h-1.5 w-1.5 rounded-full bg-bronze/65" />
-              <span className="h-px w-12 bg-bronze/25" />
-            </div>
-            <p className="relative mt-5 max-w-sm font-sans text-sm leading-6 text-slate sm:text-base">
-              Every lyric is a moment. Every film, a journey. This is where both come together.
-            </p>
-            <div className="relative mt-8 flex justify-end text-bronze/35">
-              <span className="font-sans text-6xl leading-none">✦</span>
+            <div className="relative mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
+              {themes.map((theme) => (
+                <ThemeCard key={theme.id} theme={theme} href="/lyrics/coming-soon" />
+              ))}
             </div>
           </div>
         </div>
