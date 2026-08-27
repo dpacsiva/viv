@@ -1,6 +1,7 @@
 import { ThemeCard } from "@/components/cards/ThemeCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeInSection } from "@/components/motion/FadeInSection";
+import { exploreLyricsHref } from "@/lib/constants";
 import type { Theme } from "@/types";
 
 export function ExploreThemes({ themes }: { themes: Theme[] }) {
@@ -11,7 +12,7 @@ export function ExploreThemes({ themes }: { themes: Theme[] }) {
       </div>
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {themes.map((theme) => (
-          <ThemeCard key={theme.id} theme={theme} href="/lyrics/coming-soon" />
+          <ThemeCard key={theme.id} theme={theme} href={exploreLyricsHref(theme.slug)} />
         ))}
       </div>
     </FadeInSection>

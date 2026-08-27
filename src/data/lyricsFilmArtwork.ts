@@ -10,6 +10,42 @@ export interface LyricsFilmArtwork {
 // Poster artwork is intentionally kept outside the spreadsheet snapshot so the
 // master catalogue remains an exact, read-only copy of the source tabs.
 export const LYRICS_FILM_ARTWORK: Record<string, LyricsFilmArtwork> = {
+  "2017-mersal": {
+    src: "/images/lyrics/films/mersal.webp",
+    alt: "Mersal film poster featuring Vijay in a warm, festive portrait",
+    sourcePage: "https://www.studioflicks.com/movie/mersal/",
+    sourceLabel: "StudioFlicks",
+  },
+  "2018-sarkar": {
+    src: "/images/lyrics/films/sarkar.webp",
+    alt: "Sarkar film poster featuring Vijay against a city skyline",
+    sourcePage: "https://www.themoviedb.org/movie/504231/images/posters",
+    sourceLabel: "TMDB",
+  },
+  "2019-bigil": {
+    src: "/images/lyrics/films/bigil.webp",
+    alt: "Bigil film poster featuring Vijay in two football-themed looks",
+    sourcePage: "https://www.gadgets360.com/entertainment/bigil-movie-115390",
+    sourceLabel: "Gadgets 360",
+  },
+  "2022-beast": {
+    src: "/images/lyrics/films/beast.webp",
+    alt: "Beast film poster featuring Vijay in a dark, intense portrait",
+    sourcePage: "https://tamil.behindwoods.com/tamil-movies-cinema-news-ta/samyuktha-hegde-arabic-kuthu-instagram-reels-dance.html",
+    sourceLabel: "Behindwoods",
+  },
+  "2022-varisu": {
+    src: "/images/lyrics/films/varisu.webp",
+    alt: "Varisu film poster featuring Vijay in a tailored suit",
+    sourcePage: "https://www.studioflicks.com/movie/varisu/",
+    sourceLabel: "StudioFlicks",
+  },
+  "2024-the-greatest-of-all-time": {
+    src: "/images/lyrics/films/goat.webp",
+    alt: "The Greatest of All Time film poster featuring Vijay in an action portrait",
+    sourcePage: "https://www.moviecrow.com/News/33580/the-greatest-of-all-time-vijay-plot-censor-runtime-ott-satellite",
+    sourceLabel: "MovieCrow",
+  },
   "2026-karuppu": {
     src: "/images/lyrics/films/karuppu.webp",
     alt: "Karuppu film poster featuring Suriya in a dramatic red-toned portrait",

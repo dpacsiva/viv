@@ -8,6 +8,7 @@ import { MasterMovieCard } from "./MasterMovieCard";
 import { MasterSongRow } from "./MasterSongRow";
 import { ThemeCard } from "@/components/cards/ThemeCard";
 import { includesQuery, movieHasQuery, sortByLatest } from "@/data/lyricsCatalog";
+import { exploreLyricsHref } from "@/lib/constants";
 import type { Theme } from "@/types";
 import type { LyricsLanguage, LyricsMasterMovie, LyricsMasterSong } from "@/types/lyricsMaster";
 
@@ -84,7 +85,7 @@ export function LyricsHomeClient({
             </div>
             <div className="relative mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
               {themes.map((theme) => (
-                <ThemeCard key={theme.id} theme={theme} href="/lyrics/coming-soon" />
+                <ThemeCard key={theme.id} theme={theme} href={exploreLyricsHref(theme.slug)} />
               ))}
             </div>
           </div>

@@ -8,6 +8,7 @@ const STATIC_ROUTES = [
   "",
   "/lyrics",
   "/lyrics/movies",
+  "/lyrics/thalapathy-vijay-songs",
   "/other-works",
   "/profile",
   "/themes",

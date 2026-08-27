@@ -45,3 +45,7 @@ export const THEME_SLUGS = [
   "popular",
   "others",
 ] as const;
+
+export function exploreLyricsHref(slug: string): string {
+  return slug === "thalapathy-vijay-songs" ? "/lyrics/thalapathy-vijay-songs" : "/lyrics/coming-soon";
+}

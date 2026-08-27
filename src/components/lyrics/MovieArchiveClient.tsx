@@ -4,15 +4,21 @@ import { useMemo, useState } from "react";
 import { LyricsArchiveIcon } from "./LyricsArchiveIcon";
 import { LyricsLanguageToggle } from "./LyricsLanguageToggle";
 import { MasterMovieCard } from "./MasterMovieCard";
-import { movieHasQuery, sortByLatest, yearsInCatalog } from "@/data/lyricsCatalog";
+import { movieHasQuery, sortByLatest } from "@/data/lyricsCatalog";
 import type { LyricsLanguage, LyricsMasterMovie } from "@/types/lyricsMaster";
 
 export function MovieArchiveClient({
   movies,
   initialLanguage,
+  eyebrow = "The movie index",
+  title = "Browse by movie",
+  description = "Choose a film to see its songs in sequence. The listed count and the imported song rows are shown separately wherever the two spreadsheet tabs differ.",
 }: {
   movies: LyricsMasterMovie[];
   initialLanguage: LyricsLanguage;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
 }) {
   const [language, setLanguage] = useState<LyricsLanguage>(initialLanguage);
   const [query, setQuery] = useState("");
@@ -21,7 +27,7 @@ export function MovieArchiveClient({
     () => sortByLatest(movies).filter((movie) => movieHasQuery(movie, query) && (!year || String(movie.year) === year)),
     [movies, query, year]
   );
-  const years = yearsInCatalog();
+  const years = Array.from(new Set(movies.map((movie) => movie.year))).sort((a, b) => b - a);
 
   return (
     <div className="lyrics-archive-page min-h-screen px-4 pb-20 pt-4 sm:px-6 lg:px-8">
@@ -30,11 +36,11 @@ export function MovieArchiveClient({
           <div>
             <div className="hidden items-center gap-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-bronze sm:flex">
               <span className="h-px w-8 bg-bronze" />
-              The movie index
+              {eyebrow}
             </div>
-            <h1 className="mt-0 font-sans text-5xl font-semibold tracking-[-0.045em] text-ink sm:mt-5 sm:text-7xl">Browse by movie</h1>
+            <h1 className="mt-0 font-sans text-5xl font-semibold tracking-[-0.045em] text-ink sm:mt-5 sm:text-7xl">{title}</h1>
             <p className="mt-4 max-w-2xl font-sans text-base leading-7 text-slate">
-              Choose a film to see its songs in sequence. The listed count and the imported song rows are shown separately wherever the two spreadsheet tabs differ.
+              {description}
             </p>
           </div>
           <LyricsLanguageToggle value={language} onChange={setLanguage} />
