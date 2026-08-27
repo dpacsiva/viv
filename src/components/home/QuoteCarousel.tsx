@@ -60,27 +60,6 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
         if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
       }}
     >
-      {quotes.length > 1 && (
-        <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-3 sm:px-6 lg:px-10" aria-label="Quote navigation">
-          <button
-            type="button"
-            aria-label="Previous quote"
-            onClick={() => setActiveIndex((current) => (current - 1 + quotes.length) % quotes.length)}
-            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-ivory/35 bg-ink/35 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-11 sm:w-11"
-          >
-            <ArrowIcon direction="left" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next quote"
-            onClick={() => setActiveIndex((current) => (current + 1) % quotes.length)}
-            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-ivory/35 bg-ink/35 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-11 sm:w-11"
-          >
-            <ArrowIcon direction="right" />
-          </button>
-        </div>
-      )}
-
       <div className="grid h-[520px] grid-cols-[1.25fr_0.75fr] sm:h-[560px] lg:grid-cols-2">
         <div className="relative flex h-full flex-col justify-center overflow-hidden px-12 py-8 sm:px-16 sm:py-12 lg:px-20 xl:px-24">
           <span aria-hidden="true" className="absolute left-4 top-5 font-serif text-5xl leading-none text-bronze/70 sm:left-8 sm:top-8 sm:text-7xl lg:left-16">
@@ -112,20 +91,43 @@ export function QuoteCarousel({ quotes }: { quotes: Quote[] }) {
             </AnimatePresence>
           </div>
 
-          <div className="absolute bottom-8 left-4 right-4 z-10 flex flex-wrap items-center gap-1.5 sm:left-8 sm:right-8 sm:gap-2 lg:left-16 lg:right-16" aria-label="Choose a quote">
-            {quotes.map((quote, index) => (
-              <button
-                key={quote.id}
-                type="button"
-                aria-label={`Show quote ${index + 1}`}
-                aria-current={index === activeIndex ? "true" : undefined}
-                onClick={() => setActiveIndex(index)}
-                className={`h-1 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze ${
-                  index === activeIndex ? "w-6 bg-bronze sm:w-8" : "w-1.5 bg-ivory/30 hover:bg-ivory/60 sm:w-2"
-                }`}
-              />
-            ))}
-          </div>
+          <nav className="absolute bottom-6 left-12 right-12 z-10 flex flex-col items-center gap-3 sm:bottom-8 sm:left-16 sm:right-16 lg:left-20 xl:left-24" aria-label="Quote navigation">
+            {quotes.length > 1 && (
+              <div className="flex items-center gap-5">
+                <button
+                  type="button"
+                  aria-label="Previous quote"
+                  onClick={() => setActiveIndex((current) => (current - 1 + quotes.length) % quotes.length)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-ivory/35 bg-ink/45 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-9 sm:w-9"
+                >
+                  <ArrowIcon direction="left" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next quote"
+                  onClick={() => setActiveIndex((current) => (current + 1) % quotes.length)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-ivory/35 bg-ink/45 text-ivory/80 backdrop-blur-sm transition-colors hover:border-bronze hover:bg-bronze hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:h-9 sm:w-9"
+                >
+                  <ArrowIcon direction="right" />
+                </button>
+              </div>
+            )}
+
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2" aria-label="Choose a quote">
+              {quotes.map((quote, index) => (
+                <button
+                  key={quote.id}
+                  type="button"
+                  aria-label={`Show quote ${index + 1}`}
+                  aria-current={index === activeIndex ? "true" : undefined}
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-1 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze ${
+                    index === activeIndex ? "w-6 bg-bronze sm:w-8" : "w-1.5 bg-ivory/30 hover:bg-ivory/60 sm:w-2"
+                  }`}
+                />
+              ))}
+            </div>
+          </nav>
         </div>
 
         <div className="relative h-full overflow-hidden">

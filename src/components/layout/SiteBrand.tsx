@@ -12,8 +12,8 @@ export function SiteBrand({ className = "" }: SiteBrandProps) {
       width={220}
       height={87}
       priority
-      sizes="(max-width: 639px) 112px, 150px"
-      className={`h-10 w-auto object-contain sm:h-14 ${className}`}
+      sizes="(max-width: 639px) 128px, 168px"
+      className={`h-12 w-auto object-contain sm:h-16 ${className}`}
     />
   );
 }
