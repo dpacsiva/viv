@@ -62,7 +62,7 @@ export function LyricsHomeClient({
               <LyricsArchiveIcon name="feather" size={28} className="text-bronze/75" />
             </div>
             <p className="mt-6 max-w-xl font-sans text-base leading-7 text-slate sm:text-lg">
-              Explore the songs that brought Vivek&apos;s films to life. Browse by movie or move into the complete archive, with English and Tamil titles kept together from the master sheet.
+              Explore the words of Vivek that give life to the films. Browse by movie or move into the complete archive, with English and Tamil titles kept together.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <LyricsLanguageToggle value={language} onChange={setLanguage} />
@@ -97,7 +97,9 @@ export function LyricsHomeClient({
                 <LyricsArchiveIcon name={icon} size={21} />
               </span>
               <span>
-                <span className="block font-sans text-2xl font-semibold text-ink sm:text-3xl">{value}</span>
+                <span className="block font-sans text-2xl font-semibold text-ink sm:text-3xl">
+                  {value}<sup className="ml-0.5 text-lg align-super sm:text-xl">+</sup>
+                </span>
                 <span className="mt-0.5 block font-sans text-xs text-slate sm:text-sm">{label}</span>
               </span>
             </div>
@@ -183,7 +185,9 @@ export function LyricsHomeClient({
         <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr]">
           <div className="font-sans text-lg leading-7 text-slate sm:text-xl">
             <span className="mr-2 text-3xl text-bronze/40">“</span>
-            I write what I feel.<br />You feel what you hear.<br />That&apos;s the magic.
+            Any pain that I see around me is close to my heart.<br />
+            Even if I am able to lift that pain by one percent,<br />
+            I would be happy.
             <span className="ml-3 text-bronze">— Vivek</span>
           </div>
           <LyricsArchiveIcon name="feather" size={42} className="text-bronze/60" />
