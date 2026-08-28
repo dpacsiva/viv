@@ -137,6 +137,11 @@ body {
     repeating-linear-gradient(0deg, rgb(125 83 41 / 0.018) 0 1px, transparent 1px 5px);
 }
 
+.site-navigation,
+.site-navigation a {
+  font-family: var(--font-google-sans), "Google Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
 ::selection {
   background: var(--color-bronze);
   color: var(--color-white);

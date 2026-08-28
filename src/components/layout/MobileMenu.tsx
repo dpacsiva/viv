@@ -58,7 +58,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                 </svg>
               </button>
             </div>
-            <nav className="flex flex-col" aria-label="Mobile primary">
+            <nav className="site-navigation flex flex-col" aria-label="Mobile primary">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}

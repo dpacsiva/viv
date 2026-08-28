@@ -43,7 +43,7 @@ export function Header() {
             <SiteBrand />
           </Link>
 
-          <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Primary">
+          <nav className="site-navigation hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Primary">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
