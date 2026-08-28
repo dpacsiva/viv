@@ -41,8 +41,8 @@ export function LyricsHomeClient({
   const displayedMovies = query ? matchingMovies : latestMovies.slice(0, 6);
   const stats: Array<{ value: string; label: string; icon: LyricsArchiveIconName }> = [
     { value: String(filmMovies.length), label: "Films", icon: "film" },
-    { value: String(songs.length), label: "Song rows", icon: "music" },
-    { value: String(new Set(songs.map((song) => song.year)).size), label: "Years covered", icon: "feather" },
+    { value: String(songs.length), label: "Songs", icon: "music" },
+    { value: String(new Set(songs.map((song) => song.year)).size), label: "Years", icon: "feather" },
     { value: "2", label: "Languages", icon: "star" },
   ];
 

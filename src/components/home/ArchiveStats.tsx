@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 
 const STATS = [
-  { id: "songs-written", value: 260, label: "Songs Written", icon: "feather" },
-  { id: "films", value: 130, label: "Films", icon: "film" },
+  { id: "songs-written", value: 265, label: "Songs Written", icon: "feather" },
+  { id: "films", value: 132, label: "Films", icon: "film" },
   { id: "music-videos", value: 5, label: "Music Videos", icon: "camera" },
 ] as const;
 
